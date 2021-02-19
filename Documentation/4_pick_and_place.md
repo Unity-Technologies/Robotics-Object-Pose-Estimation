@@ -63,7 +63,7 @@ Building this Docker container will install the necessary packages for this tuto
 <img src="Images/4_docker_daemon.png" height=500/>
 </p>
 
-2. In the terminal, ensure the current location is at the root of the `object_pose_estimation` directory. Build the provided ROS Docker image as follows:
+2. In the terminal, ensure the current location is at the root of the `Object-Pose-Estimation` directory. Build the provided ROS Docker image as follows:
 
 ```bash
 docker build -t unity-robotics:pose-estimation -f docker/Dockerfile .
@@ -90,7 +90,7 @@ source devel/setup.bash
 
 The ROS workspace is now ready to accept commands!
 
->Note: The Docker-related files (Dockerfile, bash scripts for setup) are located in `PATH-TO-object_pose_estimation/docker`. 
+>Note: The Docker-related files (Dockerfile, bash scripts for setup) are located in `Object-Pose-Estimation/docker`. 
 
 ---
 

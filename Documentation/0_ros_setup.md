@@ -2,7 +2,7 @@
 
 This page provides steps on how to manually set up a catkin workspace for the Pose Estimation tutorial.
 
-1. Navigate to the `object_pose_estimation/` directory of this downloaded repository. This directory will be used as the ROS catkin workspace.
+1. Navigate to the root `Object-Pose-Estimation/` directory of this downloaded repository. This directory will be used as the ROS catkin workspace.
 
 2. Copy or download this directory to your ROS operating system if you are doing ROS operations in another machine, VM, or container.
 
