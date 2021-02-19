@@ -39,7 +39,7 @@ Here you have two options for the model:
 
 #### Option A: Use Our Pre-trained Model
 
-1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Unity-Robotics-Hub/releases/download/Pose-Estimation/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
+1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
 
 #### Option B: Use Your Own Model
 

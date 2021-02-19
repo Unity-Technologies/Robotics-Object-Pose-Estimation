@@ -122,7 +122,7 @@ As seen above, the new Scene already contains a camera (`Main Camera`) and a lig
 #### Adding Tutorial Files
 Now it is time to add some more objects to our scene. Before doing so, we need to import some folders containing the required assets. 
 
-4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/Unity-Robotics-Hub/releases/download/Pose-Estimation/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
+4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
 
 5. Drag and Drop the `TutorialAssets` folder onto the `Assets` folder in the _**Project**_ tab. 
 
