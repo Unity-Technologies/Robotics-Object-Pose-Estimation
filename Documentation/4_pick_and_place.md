@@ -25,7 +25,7 @@ In this part, we will use our trained deep learning model to predict the pose of
 ### <a name="setup">Set up</a>
 If you have correctly followed parts 1 and 2, whether or not you choose to use the Unity project given by us or start it from scratch, you should have cloned the repository. 
 
->Note: This project uses Git Submodules to grab the ROS package dependencies for the [`universal_robot`](https://github.com/ros-industrial/universal_robot), [`moveit_msgs`](https://github.com/ros-planning/moveit_msgs), [`ros_tcp_endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint), and the [`robotiq`](https://github.com/ros-industrial/robotiq) folders. If you cloned the project and forgot to use `--recurse-submodules`, or if any submodule in this directory doesn't have content (e.g. moveit_msgs or ros_tcp_endpoint), you can run the following command to grab the Git submodules. 
+>Note: This project uses Git Submodules to grab the ROS package dependencies for the [`universal_robot`](https://github.com/ros-industrial/universal_robot), [`moveit_msgs`](https://github.com/ros-planning/moveit_msgs), [`ros_tcp_endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint), and the [`robotiq`](https://github.com/JStech/robotiq/tree/noetic-mods)) folders. If you cloned the project and forgot to use `--recurse-submodules`, or if any submodule in this directory doesn't have content (e.g. moveit_msgs or ros_tcp_endpoint), you can run the following command to grab the Git submodules. 
 > ```bash
 > cd /PATH/TO/Object-Pose-Estimation &&
 > git submodule update --init --recursive 
