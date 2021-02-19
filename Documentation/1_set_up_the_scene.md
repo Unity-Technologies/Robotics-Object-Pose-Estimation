@@ -16,7 +16,7 @@ In this first part of the tutorial, we will start by downloading and installing 
 
 To follow this tutorial you need to **clone** this repository even if you want to create your Unity project from scratch. 
 
->Note: This project uses Git Submodules to grab the ROS package dependencies for the `universal_robot`, `moveit_msgs`, `ros_tcp_endpoint`, and the `robotiq` folders. If you cloned the project and forgot to use `--recurse-submodules`, or if any submodule in this directory doesn't have content (e.g. moveit_msgs or ros_tcp_endpoint), you can run the following command to grab the Git submodules. 
+>Note: This project uses Git Submodules to grab the ROS package dependencies for the [`universal_robot`](https://github.com/ros-industrial/universal_robot), [`moveit_msgs`](https://github.com/ros-planning/moveit_msgs), [`ros_tcp_endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint), and the [`robotiq`](https://github.com/ros-industrial/robotiq) folders. 
 
 1. Open a terminal and put yourself where you want to host the repository. 
 ```bash
