@@ -1,6 +1,6 @@
 Component Name: ROS-Industrial Robotiq Package (JStech/robotiq) (forked from ros-industrial/robotiq) <br/>
 
-License Type: BSD<br/>
+License Type: BSD 2-clause<br/>
 
 ```
 Copyright (c) 2013, ROS-Industrial
