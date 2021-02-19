@@ -17,24 +17,12 @@ If you just want to run the completed project, this section can help you get up 
 
 You will first need to **clone** this repository. 
 
->Note For Windows Users:
-You need to have a software enabling you to run bash files. One option is to download [GIT](https://git-scm.com/downloads). During installation of GIT, add GIT Bash to windows context menu by selecting its option. After installation right click in your folder select [GIT Bash Here](Images/0_GIT_installed.png).
-
 1. Open a terminal and put yourself where you want to host the repository. 
-
 ```bash
-git clone https://github.com/Unity-Technologies/Unity-Robotics-Hub.git
+git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose-Estimation.git
 ```
 
-Three package dependencies for this project, [Universal Robot](https://github.com/ros-industrial/universal_robot) for the UR3 arm configurations, [Robotiq](https://github.com/ros-industrial/robotiq) for the gripper, and [MoveIt Msgs](https://github.com/ros-planning/moveit_msgs) are large repositories. A bash script has been provided to run a sparse clone to only copy the files required for this tutorial, as well as the [ROS TCP Endpoint](https://github.com/Unity-Technologies/ROS-TCP-Endpoint/).
-
-2. Still in the same terminal, run:
-```bash
-cd Unity-Robotics-Hub/tutorials/object_pose_estimation
-./submodule.sh 
-```
-
-3. [Install Unity `2020.2.*`.](install_unity.md)
+2. [Install Unity `2020.2.*`.](install_unity.md)
 
 ## <a name='setup'>Setup</a>
 
