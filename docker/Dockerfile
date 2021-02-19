@@ -1,34 +1,10 @@
 FROM ros:noetic-ros-base
 
-RUN sudo apt-get update && sudo apt-get install -y vim iputils-ping net-tools python3-pip ros-noetic-robot-state-publisher ros-noetic-moveit ros-noetic-rosbridge-suite ros-noetic-joy ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-tf* ros-noetic-gazebo-ros-pkgs ros-noetic-joint-state-publisher dos2unix git
+RUN sudo apt-get update && sudo apt-get install -y vim iputils-ping net-tools python3-pip ros-noetic-robot-state-publisher ros-noetic-moveit ros-noetic-rosbridge-suite ros-noetic-joy ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-tf* ros-noetic-gazebo-ros-pkgs ros-noetic-joint-state-publisher ros-noetic-soem ros-noetic-ros-canopen dos2unix git
 
 RUN sudo -H pip3 --no-cache-dir install rospkg numpy jsonpickle scipy easydict torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 
 ENV ROS_WORKSPACE=/catkin_ws
-
-# Robotiq repository https://github.com/ros-industrial/robotiq.git
-RUN git init $ROS_WORKSPACE/src/robotiq
-WORKDIR $ROS_WORKSPACE/src/robotiq
-RUN git remote add origin https://github.com/ros-industrial/robotiq.git
-RUN git config core.sparseCheckout true
-RUN echo "robotiq_2f_140_gripper_visualization/*" >> .git/info/sparse-checkout
-RUN echo "LICENSE" >> .git/info/sparse-checkout
-RUN echo ".gitignore" >> .git/info/sparse-checkout
-RUN echo "CONTRIBUTING.md" >> .git/info/sparse-checkout 
-RUN echo ".travis.yml" >> .git/info/sparse-checkout 
-RUN git pull --depth=1 origin kinetic-devel
-
-# Universal Robot repository https://github.com/ros-industrial/universal_robot
-RUN git init $ROS_WORKSPACE/src/universal_robot
-WORKDIR $ROS_WORKSPACE/src/universal_robot
-RUN git remote add origin https://github.com/ros-industrial/universal_robot
-RUN git config core.sparseCheckout true
-RUN echo "ur_description/*" >> .git/info/sparse-checkout
-RUN echo "ur_gazebo/*" >> .git/info/sparse-checkout
-RUN echo ".gitignore" >> .git/info/sparse-checkout
-RUN echo "CONTRIBUTING.md" >> .git/info/sparse-checkout 
-RUN echo ".travis.yml" >> .git/info/sparse-checkout 
-RUN git pull --depth=1 origin melodic-devel
 
 WORKDIR $ROS_WORKSPACE
 

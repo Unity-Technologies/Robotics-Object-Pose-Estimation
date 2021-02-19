@@ -14,20 +14,16 @@ In this first part of the tutorial, we will start by downloading and installing 
 
 ### <a name="reqs">Requirements</a>
 
-To follow this tutorial you need to **clone** this repository even if you want to create your Unity project from scratch.
+To follow this tutorial you need to **clone** this repository even if you want to create your Unity project from scratch. 
 
+>Note: This project uses Git Submodules to grab the ROS package dependencies for the [`universal_robot`](https://github.com/ros-industrial/universal_robot), [`moveit_msgs`](https://github.com/ros-planning/moveit_msgs), [`ros_tcp_endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint), and the [`robotiq`](https://github.com/JStech/robotiq/tree/noetic-mods) folders. 
 
-  > Note For Windows users: You need to have a software enabling you to run bash files. One option is to download [GIT](https://git-scm.com/downloads). During installation of GIT, add GIT Bash to windows context menu by selecting its option. After installation, right click in your folder, and select [GIT Bash Here](Images/0_GIT_installed.png).
+>Note: The [`ros-industrial/robotiq`](https://github.com/ros-industrial/robotiq) repository does not currently support ROS Noetic. The [`JSTech/robotiq#noetic-mods`](https://github.com/JStech/robotiq/tree/noetic-mods) fork, which has been updated to use ROS Noetic, is used instead.
+
 
 1. Open a terminal and put yourself where you want to host the repository. 
 ```bash
-git clone https://github.com/Unity-Technologies/Unity-Robotics-Hub.git
-```
-
-Then we need to be in the `Unity-Robotics-Hub/tutorials/object_pose_estimation` folder and generate the contents of the `universal_robot`, `moveit_msgs`, `ros_tcp_endpoint`, and the `robotiq` folders. 
-```bash
-cd Unity-Robotics-Hub/tutorials/object_pose_estimation
-./submodule.sh
+git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose-Estimation.git
 ```
 
 2. [Install Unity `2020.2.*`.](install_unity.md)
@@ -129,7 +125,7 @@ As seen above, the new Scene already contains a camera (`Main Camera`) and a lig
 #### Adding Tutorial Files
 Now it is time to add some more objects to our scene. Before doing so, we need to import some folders containing the required assets. 
 
-4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/Unity-Robotics-Hub/releases/download/Pose-Estimation/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
+4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
 
 5. Drag and Drop the `TutorialAssets` folder onto the `Assets` folder in the _**Project**_ tab. 
 

@@ -25,21 +25,13 @@ In this part, we will use our trained deep learning model to predict the pose of
 ### <a name="setup">Set up</a>
 If you have correctly followed parts 1 and 2, whether or not you choose to use the Unity project given by us or start it from scratch, you should have cloned the repository. 
 
+>Note: This project uses Git Submodules to grab the ROS package dependencies for the [`universal_robot`](https://github.com/ros-industrial/universal_robot), [`moveit_msgs`](https://github.com/ros-planning/moveit_msgs), [`ros_tcp_endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint), and the [`robotiq`](https://github.com/JStech/robotiq/tree/noetic-mods)) folders. If you cloned the project and forgot to use `--recurse-submodules`, or if any submodule in this directory doesn't have content (e.g. moveit_msgs or ros_tcp_endpoint), you can run the following command to grab the Git submodules. 
+> ```bash
+> cd /PATH/TO/Object-Pose-Estimation &&
+> git submodule update --init --recursive 
+> ```
 
->Note: If you cloned the project and forgot to use `--recurse-submodules`, or if any submodule in this directory doesn't have content (e.g. moveit_msgs or ros_tcp_endpoint), you can run the following command to grab the Git submodules. But before you need to be in the `object_pose_estimation` folder. 
->```bash
->cd /PATH/TO/Unity-Robotics-Hub/tutorials/object_pose_estimation &&
->git submodule update --init --recursive 
->```
-
-Three package dependencies for this project, [Universal Robot](https://github.com/ros-industrial/universal_robot) for the UR3 arm configurations, [Robotiq](https://github.com/ros-industrial/robotiq) for the gripper, and [MoveIt Msgs](https://github.com/ros-planning/moveit_msgs) are large repositories. A bash script has been provided to run a sparse clone to only copy the files required for this tutorial, as well as the [ROS TCP Endpoint](https://github.com/Unity-Technologies/ROS-TCP-Endpoint/).
-
-1. Open a terminal and go to the directory of the `object_pose_estimation` folder. Then run:
-```bash
-./submodule.sh 
-```
-
-In your `object_pose_estimation` folder, you should have a `ROS` folder. Inside that folder you should have a `src` folder and inside that one 5 folders: `moveit_msgs`, `robotiq`, `ros_tcp_endpoint`, `universal_robot` and `ur3_moveit`. 
+In your ROS/src folder, you should now have five subdirectories: `moveit_msgs`, `robotiq`, `ros_tcp_endpoint`, `universal_robot` and `ur3_moveit`. 
 
 ### <a name="step-2">Adding the Pose Estimation Model</a>
 
@@ -47,7 +39,7 @@ Here you have two options for the model:
 
 #### Option A: Use Our Pre-trained Model
 
-1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Unity-Robotics-Hub/releases/download/Pose-Estimation/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
+1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
 
 #### Option B: Use Your Own Model
 
@@ -71,7 +63,7 @@ Building this Docker container will install the necessary packages for this tuto
 <img src="Images/4_docker_daemon.png" height=500/>
 </p>
 
-2. In the terminal, ensure the current location is at the root of the `object_pose_estimation` directory. Build the provided ROS Docker image as follows:
+2. In the terminal, ensure the current location is at the root of the `Object-Pose-Estimation` directory. Build the provided ROS Docker image as follows:
 
 ```bash
 docker build -t unity-robotics:pose-estimation -f docker/Dockerfile .
@@ -98,7 +90,7 @@ source devel/setup.bash
 
 The ROS workspace is now ready to accept commands!
 
->Note: The Docker-related files (Dockerfile, bash scripts for setup) are located in `PATH-TO-object_pose_estimation/docker`. 
+>Note: The Docker-related files (Dockerfile, bash scripts for setup) are located in `Object-Pose-Estimation/docker`. 
 
 ---
 
