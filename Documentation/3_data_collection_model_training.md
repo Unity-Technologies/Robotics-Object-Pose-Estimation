@@ -122,7 +122,7 @@ python -m pose_estimation.cli train
 >Note: If the training process ends unexpectedly, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
 ### Visualizing Training Results with Tensorboard
-If you'd like to examine the results of your training run in more detail, see our guide on [viewing the Tensorboard logs](../Model/tensorboard.md).
+If you'd like to examine the results of your training run in more detail, see our guide on [viewing the Tensorboard logs](../Model/documentation/tensorboard.md).
 
 ### Evaluating the Model
 Once training has completed, we can also run our model on our validation dataset to measure its performance on data it has never seen before. 
