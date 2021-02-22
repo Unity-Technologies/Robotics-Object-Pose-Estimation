@@ -67,5 +67,9 @@
   - This can be found in Docker Desktop settings, under the gear icon. 
 - `Exception Raised: unpack requires a buffer of 4 bytes`: This may be caused by a mismatch in the expected Service Request formatting. Ensure that the [srv definition](../ROS/src/ur3_moveit/srv/MoverService.srv) matches the [generated C# script](../PoseEstimationDemoProject/Assets/TutorialAssets/RosMessages/Ur3Moveit/srv/MoverServiceRequest.cs), and that you have not modified these files since the last push to your ROS workspace.
 
+### ROS Workspace
+- If the `catkin_make` command is failing, ensure you are specifying which packages to build (i.e. `catkin_make -DCATKIN_WHITELIST_PACKAGES="moveit_msgs;ros_tcp_endpoint;ur3_moveit;robotiq_2f_140_gripper_visualization;ur_description;ur_gazebo"`). 
+  - If the problem persists, add the `-j1` flag to the `catkin_make` command.
+
 ### Ubuntu
 - Running Unity and Docker on Ubuntu may throw a `System.Net.SocketException: Address already in use` error when using the loopback address. If this is the case, in your Unity Editor, under Robotics > ROS Settings, leave the `Override Unity IP Address` blank to let Unity automatically determine the address. Change the `ROS IP Address` to the IP of your Docker container, most likely `172.17.0.X`. You may need to modify these settings based on your unique network setup.
