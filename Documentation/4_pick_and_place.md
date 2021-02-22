@@ -118,7 +118,7 @@ Prefabs have been provided for the UI elements and trajectory planner for conven
 3. Ensure that the ROS Port is set to `10000` and the Unity Port is set to `5005`. You can leave the Show HUD box unchecked. This HUD can be helpful for debugging message and service requests with ROS. You may turn this on if you encounter connection issues.
 
 <p align="center">
-<img src="Images/4_ros_settings.png" width="500"/>
+<img src="Images/4_ros_settings.png" width="400"/>
 </p>
 
 Opening the ROS Settings has created a ROSConnectionPrefab in `Assets/Resources` with the user-input settings. When the static `ROSConnection.instance` is referenced in a script, if a `ROSConnection` instance is not already present, the prefab will be instantiated in the Unity scene, and the connection will begin.

@@ -25,9 +25,11 @@ Most of the ROS setup has been provided via the `ur3_moveit` package. This secti
 4. If you have not already built and sourced the ROS workspace since importing the new ROS packages, navigate to your ROS workplace, and run: 
 
 ```bash 
-catkin_make
+catkin_make -DCATKIN_WHITELIST_PACKAGES="moveit_msgs;ros_tcp_endpoint;ur3_moveit;robotiq_2f_140_gripper_visualization;ur_description;ur_gazebo"
 source devel/setup.bash
 ```
+
+>Note: This `catkin_make` command specifies the packages to build for this project, as the dependent repositories include extra packages that are not used for this demo and may cause build issues.
 
 Ensure there are no unexpected errors.
 

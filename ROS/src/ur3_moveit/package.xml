@@ -34,7 +34,6 @@
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>ros_tcp_endpoint</exec_depend>
 
-<!--   <run_depend>franka_description</run_depend> -->
   <exec_depend>moveit_ros_move_group</exec_depend>
   <exec_depend>moveit_fake_controller_manager</exec_depend>
   <exec_depend>moveit_kinematics</exec_depend>
@@ -48,6 +47,9 @@
   <exec_depend>moveit_msgs</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>controller_manager</exec_depend>
+  <exec_depend>robotiq_2f_140_gripper_visualization</exec_depend>
+  <exec_depend>ur_description</exec_depend>
+  <exec_depend>ur_gazebo</exec_depend>
   
 
   <!-- The export tag contains other, unspecified, tags -->
