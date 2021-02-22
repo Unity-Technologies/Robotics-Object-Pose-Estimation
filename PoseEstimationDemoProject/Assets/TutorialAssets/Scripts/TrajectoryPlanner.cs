@@ -4,7 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-using ROSGeometry;
+using Unity.Robotics.ROSTCPConnector;
+using Unity.Robotics.ROSTCPConnector.ROSGeometry;
 using RosMessageTypes.Ur3Moveit;
 using Quaternion = UnityEngine.Quaternion;
 using Transform = UnityEngine.Transform;

@@ -42,7 +42,7 @@ In your root `Object-Pose-Estimation` folder, you should have a `ROS` folder. In
 
 1. Download the [pose estimation model](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) we have trained.
 
-2. Go inside the `ROS/SRC/ur3_moveit` folder and create a folder `models`. Copy the `UR3_single_cube_model.tar` file you've just downloaded into this folder.
+2. Go inside the `ROS/src/ur3_moveit` folder and create a folder `models`. Copy the `UR3_single_cube_model.tar` file you've just downloaded into this folder.
 
 
 ## Set up the ROS side

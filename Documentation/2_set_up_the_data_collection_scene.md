@@ -44,7 +44,7 @@ In the Inspector view for the Perception Camera component, the list of Camera La
 
 There are several other types of labelers available, and you can even write your own. If you want more information on labelers, you can consult the [Perception package documentation](https://github.com/Unity-Technologies/com.unity.perception).
 
-6. In the _**Inspector**_ tab, in the `Perception Camera` script, click on the _**+**_ button at the bottom right corner of the `List is Empty` field, and select `BoundingBox3DLabeler`. Once applied, the labeler will highlight the edges of the labeled `GameObjects`. Don't worry, this highlighting won't show up in the image data we collect, it is just there to help us visualize the labeler.
+6. In the _**Inspector**_ tab, in the `Perception Camera` script, click on the _**+**_ button at the bottom right corner of the `List is Empty` field, and select `BoundingBox3DLabeler`. Once applied, the labeler will highlight the edges of the labeled `GameObjects`. Don't worry, this highlighting won't show up in the image data we collect; it is just there to help us visualize the labeler.
 
 Once you add the labeler, the Inspector view of the Perception Camera component will look like this:
 

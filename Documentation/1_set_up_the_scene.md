@@ -54,20 +54,20 @@ We will need to download and install several packages. In general, packages can 
 Installing the different packages may take some time (few minutes). 
 
 <p align="center">
-<img src="Gifs/1_package_imports.gif"/>
+<img src="Gifs/1_package_imports_short.gif"/>
 </p>
 
 
 #### Install Dependencies
 Install the following packages with the provided git URLs:
 
-1. [Perception package](https://github.com/Unity-Technologies/com.unity.perception) - `com.unity.perception@0.7.0-preview.1`
+1. [Perception package](https://github.com/Unity-Technologies/com.unity.perception) - `com.unity.perception@0.7.0-preview.2`
     * This will help us collect training data for our machine learning model. 
 
-2. [URDF Importer package](https://github.com/Unity-Technologies/URDF-Importer) - `https://github.com/Unity-Technologies/URDF-Importer.git#v0.1.2`
+2. [URDF Importer package](https://github.com/Unity-Technologies/URDF-Importer) - `https://github.com/Unity-Technologies/URDF-Importer.git?path=/com.unity.robotics.urdf-importer#v0.2.0`
     * This package will help us import a robot into our scene from a file in the [Unified Robot Description Format (URDF)](http://wiki.ros.org/urdf).
 
-3. [TCP Connector package](https://github.com/Unity-Technologies/ROS-TCP-Connector) - `https://github.com/Unity-Technologies/ROS-TCP-Connector.git#v0.1.2`
+3. [TCP Connector package](https://github.com/Unity-Technologies/ROS-TCP-Connector) - `https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector#v0.2.0`
     * This package will enable a connection between ROS and Unity. 
 
 >Note: If you encounter a Package Manager issue, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
@@ -81,7 +81,7 @@ The Hierarchy, Scene View, Game View, Play/Pause/Step toolbar, Inspector, Projec
 </p>
 
 
-The perception packages relies on a "ground truth render feature" to save out labeled images as training data. You don't need to worry about the details, but follow the steps below to add this component:
+The Perception package relies on a "ground truth render feature" to save out labeled images as training data. You don't need to worry about the details, but follow the steps below to add this component:
 
 1. The _**Project**_ tab contains a search bar; use it to find the file named `ForwardRenderer`, and click on the file named `ForwardRenderer.asset` as shown below:
 
