@@ -1,9 +1,9 @@
 Component Name: ROS-Industrial Universal Robot meta-package (ros-industrial/universal_robot) <br/>
 
-License Type: BSD 3-clause<br/>
+License Type: BSD 3-clause (not found)<br/>
 
 ```
-Copyright (c) YEAR OWNER
+Copyright (c) 
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -20,10 +20,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 Component Name: MoveIt Msgs (ros-planning/moveit_msgs) <br/>
 
-License Type: BSD 3-clause<br/>
+License Type: BSD 3-clause (not found)<br/>
 
 ```
-Copyright (c) YEAR OWNER
+Copyright (c)
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -72,10 +72,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Component Name: Robotiq 2-Finger Adaptive Robot Gripper 85 ROS Package (a-price/robotiq_arg85_description) <br/>
 
-License Type: BSD 3-clause<br/>
+License Type: BSD 3-clause (not found)<br/>
 
 ```
-Copyright (c) YEAR OWNER
+Copyright (c)
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
