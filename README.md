@@ -68,3 +68,19 @@ This part includes the preparation and setup necessary to run a pick-and-place t
 * Controlling a gripping tool to successfully grasp and drop an object.
 
 ---
+
+## Community and Feedback
+
+The Unity Robotics projects are open-source and we encourage and welcome contributions. 
+If you wish to contribute, be sure to review our [contribution guidelines](CONTRIBUTING.md) 
+and [code of conduct](CODE_OF_CONDUCT.md).
+
+## Support
+For general questions, feedback, or feature requests, connect directly with the 
+Robotics team at [unity-robotics@unity3d.com](mailto:unity-robotics@unity3d.com).
+
+For bugs or other issues, please file a GitHub issue and the Robotics team will 
+investigate the issue as soon as possible.
+
+## License
+[Apache License 2.0](LICENSE)
