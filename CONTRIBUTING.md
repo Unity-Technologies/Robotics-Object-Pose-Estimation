@@ -46,13 +46,14 @@ All Python code should follow the [PEP 8 style guidelines](https://pep8.org/).
 
 All C# code should follow the [Microsoft C# Coding Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions).
 
-## Contribution agreement
+## Contributor License Agreements
 
-**All contributions are subject to the [Unity Contribution Agreement (UCA)](https://unity3d.com/legal/licenses/Unity_Contribution_Agreement).**
-
-By making a pull request, you are confirming agreement to the terms and conditions 
-of the UCA, including that your Contributions are your original creation and that 
-you have complete right and authority to make your Contributions.
+When you open a pull request, you will be asked to acknowledge our Contributor
+License Agreement. We allow both individual contributions and contributions made
+on behalf of companies. We use an open source tool called CLA assistant. If you
+have any questions on our CLA, please
+[submit an issue](https://github.com/Unity-Technologies/Object-Pose-Estimation/issues) or
+email us at [unity-robotics@unity3d.com](mailto:unity-robotics@unity3d.com).
 
 ## Contribution review
 
