@@ -235,7 +235,7 @@ To save time, we have provided a pre-written custom Randomizer to do this.
 <img src="Gifs/2_robot_randomizer_settings.gif" height=508 />
 </p>
 
-1.  Now we need to add the corresponding RandomizerTag to the cube. 
+12.  Now we need to add the corresponding RandomizerTag to the cube. 
     * Select the `Cube` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `RobotArmObjectPositionRandomizerTag` in the search bar that appears, until the `RobotArmObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
     * In the UI for this new component, enable the `Must Be Reachable` property. 
 
