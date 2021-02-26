@@ -21,7 +21,7 @@ To follow this tutorial you need to **clone** this repository even if you want t
 >Note: The [`ros-industrial/robotiq`](https://github.com/ros-industrial/robotiq) repository does not currently support ROS Noetic. The [`JSTech/robotiq#noetic-mods`](https://github.com/JStech/robotiq/tree/noetic-mods) fork, which has been updated to use ROS Noetic, is used instead.
 
 
-1. Open a terminal and put yourself where you want to host the repository. 
+1. Open a terminal and navigate to the folder where you want to host the repository. 
 ```bash
 git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose-Estimation.git
 ```
@@ -49,9 +49,9 @@ We will need to download and install several packages. In general, packages can 
 
 - Click on the _**+**_ sign at the top-left corner of the _**Package Manager**_ window and then choose the option _**Add package from git URL...**_. 
 
-- Enter the package address and click _**Add**_. It will take some time for the manager to download and import the package.
-
-Installing the different packages may take some time (few minutes). 
+- Enter the package address and click _**Add**_. 
+  
+It can take a few minutes for the manager to download and import packages.
 
 <p align="center">
 <img src="Gifs/1_package_imports_short.gif"/>
@@ -72,16 +72,16 @@ Install the following packages with the provided git URLs:
 
 >Note: If you encounter a Package Manager issue, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
-### <a name="step-3">Set up Ground Truth Render Feature</a>
+### <a name="step-3">Set Up Ground Truth Render Feature</a>
 
-The Hierarchy, Scene View, Game View, Play/Pause/Step toolbar, Inspector, Project, and Console windows of the Unity Editor have been highlighted below for reference, based on the default layout. Custom Unity Editor layouts may vary slightly. A top menu bar option is available to re-open any of these windows: Window > General.
+The ***Hierarchy***, ***Scene***, ***Game***, ***Inspector***, ***Project***, and ***Console*** windows of the Unity Editor, as well as the ***Play/Pause/Step*** toolbar have been highlighted below for reference, based on the default layout. Custom Unity Editor layouts may vary slightly. A top menu bar option is available to re-open any of these windows: Window > General.
 
 <p align="center">
 <img src="Images/1_scene_overview.png"/>
 </p>
 
 
-The Perception package relies on a "ground truth render feature" to save out labeled images as training data. You don't need to worry about the details, but follow the steps below to add this component:
+The Perception package relies on a "Ground Truth Renderer Feature" to output labeled images as training data. Follow the steps below to add this component to your rendering settings:
 
 1. The _**Project**_ tab contains a search bar; use it to find the file named `ForwardRenderer`, and click on the file named `ForwardRenderer.asset` as shown below:
 
@@ -96,10 +96,10 @@ The Perception package relies on a "ground truth render feature" to save out lab
 </p>
 
 
-### <a name="step-4">Set up the Scene</a>
+### <a name="step-4">Set Up the Scene</a>
 
 #### The Scene
-Simply put in Unity, a `Scene` contains any object that exists in the world. This world can be a game, or in this case, a data-collection-oriented simulation. Every new project contains a Scene named SampleScene, which is automatically opened when the project is created. This Scene comes with several objects and settings that we do not need, so let's create a new one.
+Simply put in Unity, a Scene contains any object that exists in the world. This world can be a game, or in this case, a data-collection-oriented simulation. Every new project contains a Scene named `SampleScene`, which is automatically opened when the project is created. This Scene comes with several objects and settings that we do not need, so let's create a new one.
 
 1. In the _**Project**_ tab, right-click on the `Assets > Scenes` folder and click _**Create -> Scene**_. Name this new Scene `TutorialPoseEstimation` and double-click on it to open it. 
 
@@ -127,7 +127,7 @@ Now it is time to add some more objects to our scene. Before doing so, we need t
 
 4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
 
-5. Drag and Drop the `TutorialAssets` folder onto the `Assets` folder in the _**Project**_ tab. 
+5. Drag and Drop the `TutorialAssets` folder from your operating system's file explorer onto the `Assets` folder in the _**Project**_ tab of the editor. 
 
 Your `Assets` folder should like this: 
 
@@ -136,44 +136,44 @@ Your `Assets` folder should like this:
 </p>
 
 #### Using Prefabs
-Unity’s [Prefab](https://docs.unity3d.com/2020.2/Documentation/Manual/Prefabs.html) system allows you to create, configure, and store a **GameObject** complete with all its components, property values, and child **GameObjects** as a reusable **Asset**. It is a convenient way to store complex objects. 
+Unity’s [Prefab](https://docs.unity3d.com/2020.2/Documentation/Manual/Prefabs.html) system allows you to create, configure, and store a GameObject complete with all its components, property values, and child GameObjects as a reusable Unity Asset. It is a convenient way to store complex objects. 
 
-A prefab is just a file, and you can easily create an instance of the object in the scene from a prefab by dragging it into the _**Hierarchy panel**_.
+A Prefab is just a file, and you can easily create an instance of the object in the scene from a Prefab by dragging it into the _**Hierarchy**_ tab.
 
-For your convenience, we have provided prefabs for most of the components of the scene (the cube, goal, table, and floor).
+For your convenience, we have provided Prefabs for most of the components of the scene (the cube, goal, table, and floor).
 
-6. In the _**Project**_ tab, go to `Assets > TutorialAssets > Prefabs > Part1` and drag and drop the `Cube` prefab inside the _**Hierarchy panel**_.
+1. In the _**Project**_ tab, go to `Assets > TutorialAssets > Prefabs > Part1` and drag and drop the `Cube` Prefab into the _**Hierarchy**_ tab.
 
-7. Repeat the action with the `Goal`, `Table` and the `Floor`. 
+2. Repeat the above action with the `Goal`, `Table` and `Floor` Prefabs. 
 
 
 <p align="center">
 <img src="Gifs/1_import_prefabs.gif"/>
 </p>
 
->Note: If you encounter an issue with the imported prefab materials, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
+>Note: If you encounter issues with the materials of the imported Prefabs, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
 
 #### Importing the Robot
 Finally we will add the robot and the URDF files in order to import the UR3 Robot. 
 
-8. In the _**Project**_ tab, go to `Assets > TutorialAssets > URDFs > ur3_with_gripper` and right click on the `ur3_with_gripper.urdf` file and select `Import Robot From Selected URDF file`. A window will pop up, keep the default **Y Axis** type in the Import menu and the **Mesh Decomposer** to `VHACD`. Then, click Import URDF. These set of actions are showed in the following video. 
+1. In the _**Project**_ tab, go to `Assets > TutorialAssets > URDFs > ur3_with_gripper` and right click on the `ur3_with_gripper.urdf` file and select `Import Robot From Selected URDF file`. A window will pop up, keep the default **Y Axis** type and `VHACD` **Mesh Decomposer** in the Import menu. Then, click Import URDF. These actions are shown in the video below. 
 
->Note Unity uses a left-handed coordinate system in which the y-axis points up. However, many robotics packages use a right-handed coordinate system in which the z-axis or x-axis points up. For this reason, it is important to pay attention to the coordinate system when importing URDF files or interfacing with other robotics software.
+>Note: Unity uses a left-handed coordinate system in which the y-axis points up. However, many robotics packages use a right-handed coordinate system in which the z-axis or x-axis point up. For this reason, it is important to pay attention to the coordinate system when importing URDF files or interfacing with other robotics software.
 
->Note: VHACD algorithm produces higher quality convex hull for collision detection than the default algorithm.
+>Note: The `VHACD` algorithm produces higher quality convex hull for collision detection than the default algorithm.
 
 <p align="center">
 <img src="Gifs/1_URDF_importer.gif" width=800 height=548/>
 </p>
 
->Note: If you encounter an issue with importing the robot, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
+>Note: If you encounter issues with importing the robot, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
 #### Setting up the Robot
 
-9. Select the `ur3_with_gripper` GameObject and in the _**Inspector**_ view, go to the `Controller` script and set the `Stiffness` to **10000**, the `Damping` to **1000** and the `Force Limit` to **1000**. These are physics properties that control how the robot moves.
+9. In the _**Hierarchy**_ tab, select the `ur3_with_gripper` GameObject and in the _**Inspector**_ view, go to the `Controller` script and set the `Stiffness` to **10000**, the `Damping` to **1000** and the `Force Limit` to **1000**. These are physics properties that control how the robot moves.
 
-10. In the _**Hierarchy**_ tab, select the `ur3_with_gripper` GameObject and click on the arrow on the left, then click on the arrow on the left of `world`, then on `base_link`. In the `Articulation Body` component, toggle on `Immovable` for the `base link`. This will fix the robot base to its current position.
+10. In the _**Hierarchy**_ tab, click on the arrow to the left of the `ur3_with_gripper` GameObject to expand it, then expand `world`, and select `base_link`. In the `Articulation Body` component, toggle on `Immovable`. This will fix the robot base to its current position.
 
 <p align="center">
 <img src="Gifs/1_robot_settings.gif" width=800 height=465/>
