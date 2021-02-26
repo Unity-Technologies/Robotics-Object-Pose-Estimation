@@ -157,7 +157,7 @@ For your convenience, we have provided Prefabs for most of the components of the
 #### Importing the Robot
 Finally we will add the robot and the URDF files in order to import the UR3 Robot. 
 
-1. In the _**Project**_ tab, go to `Assets/TutorialAssets/URDFs/ur3_with_gripper` and right click on the `ur3_with_gripper.urdf` file and select `Import Robot From Selected URDF file`. A window will pop up, keep the default **Y Axis** type and `VHACD` **Mesh Decomposer** in the Import menu. Then, click Import URDF. These actions are shown in the video below. 
+8. In the _**Project**_ tab, go to `Assets/TutorialAssets/URDFs/ur3_with_gripper` and right click on the `ur3_with_gripper.urdf` file and select `Import Robot From Selected URDF file`. A window will pop up, keep the default **Y Axis** type and `VHACD` **Mesh Decomposer** in the Import menu. Then, click Import URDF. These actions are shown in the video below. 
 
 >Note: Unity uses a left-handed coordinate system in which the y-axis points up. However, many robotics packages use a right-handed coordinate system in which the z-axis or x-axis point up. For this reason, it is important to pay attention to the coordinate system when importing URDF files or interfacing with other robotics software.
 
