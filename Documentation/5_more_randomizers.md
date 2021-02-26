@@ -13,7 +13,7 @@ In addition to the `YRotationRandomizer` and the `RobotArmObjectPositionRandomiz
 <img src="Images/5_uniform_pose_randomizer_settings.png" height=150/>
 </p>
 
-1. Now we need to add a RandomizerTag to the camera. Select the `Main Camera` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `UniformPoseRandomizerTag` in the search bar that appears, until the `UniformPoseRandomizerTag` script is found, with a **#** icon to the left. Click the script.
+2. Now we need to add a RandomizerTag to the camera. Select the `Main Camera` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `UniformPoseRandomizerTag` in the search bar that appears, until the `UniformPoseRandomizerTag` script is found, with a **#** icon to the left. Click the script.
 
 If you press play, you should see the cube moving around the robot and rotating, the color and intensity of the light changing, and the camera itself moving slightly.
 
