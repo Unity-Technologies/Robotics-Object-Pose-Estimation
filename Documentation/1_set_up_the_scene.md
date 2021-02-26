@@ -144,7 +144,7 @@ For your convenience, we have provided Prefabs for most of the components of the
 
 1. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Cube` Prefab into the _**Hierarchy**_ tab.
 
-2. Repeat the above action with the `Goal`, `Table` and `Floor` Prefabs. 
+7. Repeat the above action with the `Goal`, `Table` and `Floor` Prefabs. 
 
 
 <p align="center">
@@ -181,4 +181,3 @@ Finally we will add the robot and the URDF files in order to import the UR3 Robo
 
 
 ### Proceed to [Part 2](2_set_up_the_data_collection_scene.md).
-
