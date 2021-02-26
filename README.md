@@ -69,12 +69,6 @@ This part includes the preparation and setup necessary to run a pick-and-place t
 
 ---
 
-## Community and Feedback
-
-The Unity Robotics projects are open-source and we encourage and welcome contributions. 
-If you wish to contribute, be sure to review our [contribution guidelines](CONTRIBUTING.md) 
-and [code of conduct](CODE_OF_CONDUCT.md).
-
 ## Support
 For general questions, feedback, or feature requests, connect directly with the 
 Robotics team at [unity-robotics@unity3d.com](mailto:unity-robotics@unity3d.com).
