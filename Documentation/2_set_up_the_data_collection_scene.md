@@ -38,7 +38,7 @@ We now need to add a few components to our camera in order to equip it for synth
 
 4. Click on this script to add it as a component. Your camera is now a `Perception` camera.
 
-5. From the top menu bar of the editor, go to `Edit/Project Settings/Editor` and uncheck `Asynchronous Shader Compilation` under `Shader Compilation` options.
+5. From the top menu bar of the editor, go to `Edit > Project Settings > Editor` and uncheck `Asynchronous Shader Compilation` under `Shader Compilation` options.
 
 In the ***Inspector*** view for the `Perception Camera` component, you can see an empty list (`List is Empty`). This is the list of Labelers. For each type of ground-truth you wish to generate alongside your captured frames, you will need to add a corresponding Labeler to this list. In our project we want to extract the position and orientation of an object, so we will use the `BoudingBox3DLabeler`. 
 
