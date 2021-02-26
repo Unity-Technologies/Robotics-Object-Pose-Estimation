@@ -171,7 +171,7 @@ Let's go through the code above and understand each part:
     * `rotationRange.Sample()` gives us a random float in the specified range.
     * We then rotate this object using the `SetYRotation()` method of the tag, which we will write in a moment.
 
-1. Open `YRotationRandomizerTag.cs` and replace its contents with the code below:
+7. Open `YRotationRandomizerTag.cs` and replace its contents with the code below:
 
 ```C#
 using UnityEngine;
