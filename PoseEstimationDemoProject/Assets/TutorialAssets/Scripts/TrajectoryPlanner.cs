@@ -53,7 +53,7 @@ public class TrajectoryPlanner : MonoBehaviour
 
     private RenderTexture renderTexture;
 
-    public GameObject scenario;
+    public PoseEstimationScenario scenario;
 
     private enum Poses
     {
@@ -92,7 +92,7 @@ public class TrajectoryPlanner : MonoBehaviour
     ///     Button callback for the Cube Randomization
     /// </summary>
     public void RandomizeCube(){
-        InferenceRandomization.Move(scenario);
+        scenario.Move();
         ActualPos.text = target.transform.position.ToString();
         ActualRot.text = target.transform.eulerAngles.ToString();
     }

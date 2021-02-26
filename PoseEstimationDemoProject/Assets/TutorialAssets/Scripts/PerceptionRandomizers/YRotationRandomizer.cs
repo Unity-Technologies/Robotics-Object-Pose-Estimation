@@ -4,27 +4,21 @@ using System;
 using UnityEngine;
 using UnityEngine.Perception.Randomization.Parameters;
 using UnityEngine.Perception.Randomization.Randomizers;
+using UnityEngine.Perception.Randomization.Samplers;
 
 
 [Serializable]
 [AddRandomizerMenu("Perception/Y Rotation Randomizer")]
-public class YRotationRandomizer : InferenceRandomizer
+public class YRotationRandomizer : Randomizer
 {
-    public FloatParameter random; // in range (0, 1)
+    public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(-180f, 180f)}; // in range (0, 1)
 
     protected override void OnIterationStart()
     {
-        OnCustomIteration();
-    }
-
-    public override void OnCustomIteration()
-    {
-        /* Runs at the start of every iteration. */
-
         IEnumerable<YRotationRandomizerTag> tags = tagManager.Query<YRotationRandomizerTag>();
         foreach (YRotationRandomizerTag tag in tags)
         {
-            float yRotation = random.Sample() * 360.0f;
+            float yRotation = rotationRange.Sample();
 
             // sets rotation
             tag.SetYRotation(yRotation);

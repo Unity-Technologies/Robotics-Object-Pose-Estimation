@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18263854, g: 0.22834885, b: 0.30714613, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2967,7 +2967,7 @@ PrefabInstance:
     - target: {fileID: 3300145754874980273, guid: 62e36fbf0e85040b2985c08ad46657f9, type: 3}
       propertyPath: scenario
       value: 
-      objectReference: {fileID: 783648245}
+      objectReference: {fileID: 783648246}
     - target: {fileID: 4060100200923292977, guid: 62e36fbf0e85040b2985c08ad46657f9, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5879,9 +5879,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783648245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d50076aff0af4515b4422166496fdd5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 03dfc4690482efe43ac40997f4dc351f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Randomizers:
@@ -5889,12 +5889,7 @@ MonoBehaviour:
   - id: 1
   - id: 2
   quitOnComplete: 1
-  constants:
-    randomSeed: 539662031
-    totalIterations: 100
-    instanceCount: 1
-    instanceIndex: 0
-    framesPerIteration: 1
+  automaticIteration: 0
   references:
     version: 1
     00000000:
@@ -5907,19 +5902,15 @@ MonoBehaviour:
         robotBase: {fileID: 1709504114}
         minRobotReachability: 0.2
         maxRobotReachability: 0.4
-        random:
-          collapsed: 0
-          value:
-            id: 3
     00000001:
       type: {class: YRotationRandomizer, ns: , asm: Assembly-CSharp}
       data:
         collapsed: 0
         <enabled>k__BackingField: 1
-        random:
+        rotationRange:
           collapsed: 0
           value:
-            id: 4
+            id: 3
     00000002:
       type: {class: LightRandomizer, ns: , asm: Assembly-CSharp}
       data:
@@ -5928,55 +5919,55 @@ MonoBehaviour:
         lightIntensityParameter:
           collapsed: 0
           value:
-            id: 5
+            id: 4
         rotationX:
           collapsed: 0
           value:
-            id: 6
+            id: 5
         rotationY:
           collapsed: 0
           value:
-            id: 7
+            id: 6
         lightColorParameter:
           collapsed: 0
           red:
-            id: 8
+            id: 7
           green:
-            id: 9
+            id: 8
           blue:
-            id: 10
+            id: 9
           alpha:
-            id: 11
+            id: 10
     00000003:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0
-          maximum: 1
-    00000004:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0
-          maximum: 1
-    00000005:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0.9
-          maximum: 1.1
-    00000006:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 40
-          maximum: 80
-    00000007:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         range:
           minimum: -180
           maximum: 180
+    00000004:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0.8
+          maximum: 1.2
+    00000005:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 40
+          maximum: 80
+    00000006:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: -180
+          maximum: 180
+    00000007:
+      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
+      data:
+        range:
+          minimum: 0.5
+          maximum: 1
     00000008:
       type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
@@ -5990,12 +5981,6 @@ MonoBehaviour:
           minimum: 0.5
           maximum: 1
     0000000A:
-      type: {class: UniformSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
-      data:
-        range:
-          minimum: 0.5
-          maximum: 1
-    0000000B:
       type: {class: ConstantSampler, ns: UnityEngine.Perception.Randomization.Samplers, asm: Unity.Perception.Runtime}
       data:
         value: 1
