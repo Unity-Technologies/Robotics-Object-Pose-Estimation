@@ -40,7 +40,7 @@ We now need to add a few components to our camera in order to equip it for synth
 
 5. From the top menu bar of the editor, go to `Edit > Project Settings > Editor` and uncheck `Asynchronous Shader Compilation` under `Shader Compilation` options.
 
-In the ***Inspector*** view for the `Perception Camera` component, you can see an empty list (`List is Empty`). This is the list of Labelers. For each type of ground-truth you wish to generate alongside your captured frames, you will need to add a corresponding Labeler to this list. In our project we want to extract the position and orientation of an object, so we will use the `BoudingBox3DLabeler`. 
+In the ***Inspector*** view for the `Perception Camera` component, you can see an empty list (`List is Empty`). This is the list of Labelers. For each type of ground-truth you wish to generate alongside your captured frames, you will need to add a corresponding Labeler to this list. In our project we want to extract the position and orientation of an object, so we will use the `BoundingBox3DLabeler`. 
 
 There are several other types of Labelers available, and you can even write your own. If you want more information on Labelers, you can consult the [Perception package documentation](https://github.com/Unity-Technologies/com.unity.perception).
 
@@ -106,7 +106,7 @@ To start randomizing your simulation, you will first need to add a **Scenario** 
 
 1. In the _**Hierarchy**_, click the **+** button and select `Create Empty`. Rename the newly created GameObject `Simulation Scenario`.
 
-2. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `Fixed Length Scenario` in the search bar that appears, until the `Fixed Length Scenario` script is found, with a **#** icon to the left. Click on the script. 
+2. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `Pose Estimation Scenario` in the search bar that appears, until the `Pose Estimation Scenario` script is found, with a **#** icon to the left. Click on the script. 
 
 Each Scenario executes a number of Iterations, and each Iteration carries on for a number of frames. These are timing elements you can leverage in order to customize your Scenarios and the timing of your randomizations. 
 
@@ -162,7 +162,7 @@ The purpose of this piece of code is to rotate a set of objects randomly about t
 >Note: If you look at the ***Console*** tab of the editor now, you will see an error regarding `YRotationRandomizerTag` not being found. This is to be expected, since we have not yet created this class; the error will go away once we create the class later.
 
 Let's go through the code above and understand each part:
-* Near the top, you'll notice the line `[AddRandomizerMenu("Perception/Y Rotation Randomizer")]`. This will give the Randomizer a name in the UI which will be used when we add the Randomizer to our `Fixed Length Scenario`. 
+* Near the top, you'll notice the line `[AddRandomizerMenu("Perception/Y Rotation Randomizer")]`. This will give the Randomizer a name in the UI which will be used when we add the Randomizer to our `Pose Estimation Scenario`. 
 * The `YRotationRandomizer` class extends `Randomizer`, which is the base class for all Randomizers that can be added to a Scenario. This base class provides a plethora of useful functions and properties that can help catalyze the process of creating new Randomizers.
 * The `FloatParameter` field contains a seeded random number generator. We can set the sampling range and the distribution of this value in the editor UI for the Randomizer. 
 * The `OnIterationStart()` function is a life-cycle method on all `Randomizer`s. It is called by the Scenario every Iteration (e.g. once per frame, if each Iteration runs for one frame). 
@@ -226,7 +226,7 @@ It is great that we can now rotate the cube, but we also want to move it around 
 To save time, we have provided a pre-written custom Randomizer to do this. 
 
 11. Select the `Simulation Scenario` GameObject, and do the following:
-    * In the _**Inspector**_ tab, on the `Fixed Length Scenario` component, click `Add Randomizer` and start typing `RobotArmObjectPositionRandomizer`. 
+    * In the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click `Add Randomizer` and start typing `RobotArmObjectPositionRandomizer`. 
     * Set `Min Robot Reachability` to `0.2` and `Max Robot Reachability` to `0.4`. 
     * On the `Plane` field, click on the circular button to the right side and start typing `ObjectPlacementPlane` and then double click on the GameObject that appears. 
     * Drag and drop the base of the robot from the ***Hierarchy*** (the `ur3_with_gripper/world/base_link/base` object) to the `Robot Base` field.

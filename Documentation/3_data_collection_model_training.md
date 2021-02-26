@@ -27,21 +27,23 @@ We need to collect data for the training process and data for the validation one
 
 We have chosen a training dataset of 30,000 images and a validation dataset of 3,000 images. 
 
-1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Fixed Length Scenario`, set the `Total Iterations` field under `Constants` to 30000.
+1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, make sure `Automatic Iteration` is enabled. When this flag is enabled, our Scenario automatically proceeds through Iterations, triggering the `OnIterationStart()` method of all Randomizers on each Iteration. When this flag is disabled, the Iterations would have to be triggered manually. 
 
-2. Press play and wait until the simulation is done. It should take a bit of time (~10 min).
+2. In the ***Inspector*** view of  `Pose Estimation Scenario`, set the `Total Iterations` field under `Constants` to 30000.
 
-3. Select `Main Camera` again to bring up its _**Inspector**_ view. At the bottom of the UI for `Perception Camera`, there are buttons for showing the latest dataset output folder and copying its path to clipboard. An example is shown below (Mac OS):
+3. Press play and wait until the simulation is done. It should take a bit of time (~10 min).
+
+4. Select `Main Camera` again to bring up its _**Inspector**_ view. At the bottom of the UI for `Perception Camera`, there are buttons for showing the latest dataset output folder and copying its path to clipboard. An example is shown below (Mac OS):
 
 <p align="center">
 <img src="Images/3_output_path.png" width = "700"/>
 </p>
 
-4. Click _**Show Folder**_ to show and highlight the folder in your operating system's file explorer.
+5. Click _**Show Folder**_ to show and highlight the folder in your operating system's file explorer.
 
-5. Change this folder's name to `UR3_single_cube_training`.   
+6. Change this folder's name to `UR3_single_cube_training`.   
 
-6. Enter the folder
+7. Enter the folder
 
 You should then see something similar to this: 
 <p align="center">
@@ -50,13 +52,13 @@ You should then see something similar to this:
 
 Now we need to collect the validation dataset. 
 
-7. Back in Unity Editor, Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Fixed Length Scenario`, set the `Total Iterations` field under `Constants` to 3000.
+8. Back in Unity Editor, Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Pose Estimation Scenario`, set the `Total Iterations` field under `Constants` to 3000.
 
-8. Press play and wait until the simulation is done. Once the simulation finishes, follow the same steps as before to navigate to the output folder.
+9. Press play and wait until the simulation is done. Once the simulation finishes, follow the same steps as before to navigate to the output folder.
 
-9. Change the folder name where the latest data was saved to `UR3_single_cube_validation`. 
+10. Change the folder name where the latest data was saved to `UR3_single_cube_validation`. 
 
-10. **(Optional)**: Move the `UR3_single_cube_training` and `UR3_single_cube_validation` folders to a directory of your choice.  
+11. **(Optional)**: Move the `UR3_single_cube_training` and `UR3_single_cube_validation` folders to a directory of your choice.  
 
 
 ## <a name="step-2">Train the Deep Learning Model</a>

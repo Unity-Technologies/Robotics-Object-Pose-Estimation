@@ -173,11 +173,11 @@ This callback is automatically run when the Pose Estimation service response arr
 
 >Note: The incoming position and rotation are converted `From<RUF>`, i.e. Unity's coordinate space, in order to cleanly convert from a `geometry_msgs/Point` and `geometry_msgs/Quaternion` to `UnityEngine.Vector3` and `UnityEngine.Quaternion`, respectively. This is equivalent to creating a `new Vector3(response.estimated_pose.position.x, response.estimated_pose.position.y, response.estimated_pose.position.z)`, and so on. This functionality is provided via the [ROSGeometry](https://github.com/Unity-Technologies/ROS-TCP-Connector/blob/dev/ROSGeometry.md) component of the ROS-TCP-Connector package.
 
->Note: The `Randomize Cube` button calls the `RandomizeCube()` method. This randomizes the position and orientation of the cube, the position of the goal, and the color, intensity, and position of the light. This is achieved through running the Randomizers defined in the `Fixed Length Scenario` component of the `Simulation Scenario` GameObject. If you want to learn more about how we created a modified Scenario so that we could fire Randomizers manually at inference time, check out the [InferenceRandomizer.cs](../PoseEstimationDemoProject/Assets/TutorialAssets/Scripts/PoseEstimationScenario.cs) script.
+>Note: The `Randomize Cube` button calls the `RandomizeCube()` method. This randomizes the position and orientation of the cube, the position of the goal, and the color, intensity, and position of the light. This is achieved through running the Randomizers defined in the `Pose Estimation Scenario` component of the `Simulation Scenario` GameObject. If you want to learn more about how we created a modified Scenario so that we could trigger Iterations manually at inference time, check out the [PoseEstimationScenario.cs](../PoseEstimationDemoProject/Assets/TutorialAssets/Scripts/PoseEstimationScenario.cs) script.
 
 Note that the `TrajectoryPlanner` component shows its member variables in the _**Inspector**_ window, which need to be assigned.
 
-6. Return to Unity. Select the `ROSObjects/Publisher` GameObject. Assign the `ur3_with_gripper` GameObject to the `Robot` field. Drag and drop the `Cube` GameObject from the _**Hierarchy**_ onto the `Target` Inspector field. Drag and drop `Goal` to the `Goal` field. Finally, assign the `Simulation Scenario` object to the `Scenario` field. You should see the following:
+1. Return to Unity. Select the `ROSObjects/Publisher` GameObject. Assign the `ur3_with_gripper` GameObject to the `Robot` field. Drag and drop the `Cube` GameObject from the _**Hierarchy**_ onto the `Target` Inspector field. Drag and drop `Goal` to the `Goal` field. Finally, assign the `Simulation Scenario` object to the `Scenario` field. You should see the following:
 
 <p align="center">
 <img src="Images/4_trajectory_field.png" width="500"/>
@@ -185,7 +185,7 @@ Note that the `TrajectoryPlanner` component shows its member variables in the _*
 
 #### Switching to Inference Mode
 
-7. On the `Simulation Scenario` GameObject, uncheck the `Fixed Length Scenario` component to disable it, as we are no longer in the Data Collection part. If you want to collect new data in the future, you can always enable `Fixed Length Scenario` and disable `ROSObjects`. 
+7. On the `Simulation Scenario` GameObject, uncheck the `Automatic Iteration` property of the `Pose Estimation Scenario`, as we are no longer in the Data Collection part. If you want to collect new data in the future, you can always enable `Automatic Iteration` and disable `ROSObjects`. 
 
 8. On the `Main Camera` GameObject, uncheck the `Perception Camera` script component, since we do not need it anymore. 
 

@@ -7,7 +7,7 @@ In addition to the `YRotationRandomizer` and the `RobotArmObjectPositionRandomiz
 
 ### Randomizing the Camera Pose
 
-1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Fixed Length Scenario` component, add a `Uniform Pose Randomizer`. For the `Random` parameter, set the minimum value of the Range to `-1`. We do this because we want to randomize the position and rotation in both directions for a given axis. The Randomizer's UI snippet should look like the following image: 
+1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, add a `Uniform Pose Randomizer`. For the `Random` parameter, set the minimum value of the Range to `-1`. We do this because we want to randomize the position and rotation in both directions for a given axis. The Randomizer's UI snippet should look like the following image: 
 
 <p align="center">
 <img src="Images/5_uniform_pose_randomizer_settings.png" height=150/>
