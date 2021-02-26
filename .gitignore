@@ -1,0 +1,7 @@
+.DS_Store
+.swp
+.idea
+.vscode/
+.vsconfig
+
+ROS/src/ur3_moveit/models

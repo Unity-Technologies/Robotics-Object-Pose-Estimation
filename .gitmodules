@@ -1,0 +1,13 @@
+[submodule "ROS/src/universal_robot"]
+	path = ROS/src/universal_robot
+	url = https://github.com/ros-industrial/universal_robot
+[submodule "ROS/src/moveit_msgs"]
+	path = ROS/src/moveit_msgs
+	url = https://github.com/ros-planning/moveit_msgs.git
+[submodule "ROS/src/ros_tcp_endpoint"]
+	path = ROS/src/ros_tcp_endpoint
+	url = https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
+[submodule "ROS/src/robotiq"]
+	path = ROS/src/robotiq
+	url = https://github.com/JStech/robotiq.git
+	branch = noetic-mods
