@@ -267,7 +267,7 @@ The Randomizer should now look like this:
 <img src="Images/2_light_randomizer_settings.png" height=450/>
 </p>
 
-1.  Now we need to add a RandomizerTag to the light. Select the `Directional Light` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `LightRandomizerTag` in the search bar that appears, until the `LightRandomizerTag` script is found, with a **#** icon to the left. Click the script.
+14.  Now we need to add a RandomizerTag to the light. Select the `Directional Light` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `LightRandomizerTag` in the search bar that appears, until the `LightRandomizerTag` script is found, with a **#** icon to the left. Click the script.
 
 To view this script, you can right click on the three dots at the right end and select `Edit Script`. 
 This Randomizer is a bit different from the previous ones. The line `[RequireComponent(typeof(Light))]` makes it so that you can only add the `LightRandomizerTag` component to an object that already has a **Light** component attached. This way, the Randomizers that query for this tag can be confident that the found objects have a **Light** component.
