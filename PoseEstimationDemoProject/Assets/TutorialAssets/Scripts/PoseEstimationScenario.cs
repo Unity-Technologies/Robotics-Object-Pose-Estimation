@@ -1,10 +1,10 @@
 using UnityEngine.Perception.Randomization.Scenarios;
 
-public class InferenceConstants : ScenarioConstants
+public class PoseEstimationScenarioConstants : ScenarioConstants
 {
     public int totalFrames = 1000;
 }
-public class PoseEstimationScenario : Scenario<InferenceConstants>
+public class PoseEstimationScenario : Scenario<PoseEstimationScenarioConstants>
 {
     public bool automaticIteration = false;
     
