@@ -44,7 +44,7 @@ In the ***Inspector*** view for the `Perception Camera` component, you can see a
 
 There are several other types of Labelers available, and you can even write your own. If you want more information on Labelers, you can consult the [Perception package documentation](https://github.com/Unity-Technologies/com.unity.perception).
 
-1. In the _**Inspector**_ view of the `Perception Camera` component, click on the _**+**_ button at the bottom right corner of the `List is Empty` field, and select `BoundingBox3DLabeler`. 
+6. In the _**Inspector**_ view of the `Perception Camera` component, click on the _**+**_ button at the bottom right corner of the `List is Empty` field, and select `BoundingBox3DLabeler`. 
 
 This Labeler will annotate the captured output with 3D bounding boxes of GameObjects in the Scene that are labelled. If the `Perception Camera`'s `Show Labeler Visualizations` option is enabled, these bounding boxes will also be visualized in real-time in the ***Scene*** view as data is generated. We will next learn how to set up this Labeler.
 
@@ -116,11 +116,11 @@ The randomization workflow involves two types of C# classes: Randomizers and Ran
 
 First, we will write a Randomizer to randomly rotate the cube around its y-axis on each Iteration of the Scenario. 
 
-1. In the _**Project**_ tab, right-click on the **Scripts** folder and select `Create -> C# Script`. Name your new script file `YRotationRandomizer`.
+3. In the _**Project**_ tab, right-click on the **Scripts** folder and select `Create -> C# Script`. Name your new script file `YRotationRandomizer`.
 
-2. Create another script and name it `YRotationRandomizerTag`.
+4. Create another script and name it `YRotationRandomizerTag`.
 
-3. Double-click `YRotationRandomizer.cs` to open it in _**Visual Studio**_.
+5. Double-click `YRotationRandomizer.cs` to open it in _**Visual Studio**_.
 
 Note that while _**Visual Studio**_ is the default option, you can choose any text editor of your choice to open C# files from Unity. You can change this setting in _**Preferences -> External Tools -> External Script Editor**_.
 

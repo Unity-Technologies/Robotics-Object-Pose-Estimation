@@ -108,7 +108,7 @@ Prefabs have been provided for the UI elements and Trajectory Planner for conven
 2. The ROS TCP connection needs to be created. In the top menu bar in Unity Editor, select `Robotics -> ROS Settings`. Find the IP address of your ROS machine. 
     * If you are going to run ROS services with the Docker container introduced [above](#step-3), fill `ROS IP Address` and `Override Unity IP` with the loopback IP address `127.0.0.1`. If you will be running ROS services via a non-Dockerized setup, you will most likely want to have the `Override Unity IP` field blank, which will let the Unity IP be determined automatically. 
 
-    * If you are **not** going to run ROS services with the Docker container, e.g. if you are using a dedicated Linux machine or VM instead, open a terminal window in this ROS workspace. Set the `ROS IP Address` field in Unity Editor to the address output with the following command:
+    * If you are **not** going to run ROS services with the Docker container, e.g. if you are using a dedicated Linux machine or VM instead, open a terminal window in this ROS workspace. Set the `ROS IP Address` field in Unity Editor to the output of the following command:
 
     ```bash
     hostname -I
@@ -177,7 +177,7 @@ This callback is automatically run when the Pose Estimation service response arr
 
 Note that the `TrajectoryPlanner` component shows its member variables in the _**Inspector**_ window, which need to be assigned.
 
-1. Return to Unity. Select the `ROSObjects/Publisher` GameObject. Assign the `ur3_with_gripper` GameObject to the `Robot` field. Drag and drop the `Cube` GameObject from the _**Hierarchy**_ onto the `Target` Inspector field. Drag and drop `Goal` to the `Goal` field. Finally, assign the `Simulation Scenario` object to the `Scenario` field. You should see the following:
+6. Return to Unity. Select the `ROSObjects/Publisher` GameObject. Assign the `ur3_with_gripper` GameObject to the `Robot` field. Drag and drop the `Cube` GameObject from the _**Hierarchy**_ onto the `Target` Inspector field. Drag and drop `Goal` to the `Goal` field. Finally, assign the `Simulation Scenario` object to the `Scenario` field. You should see the following:
 
 <p align="center">
 <img src="Images/4_trajectory_field.png" width="500"/>
