@@ -255,7 +255,7 @@ If you press **▷** (play) now, you should see the `Cube` and `Goal` objects mo
 
 Now we will add another Randomizer to introduce some variation into the Scene's lighting. 
 
-1.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Fixed Length Scenario` component, click on `Add Randomizer` and start typing `LightRandomizer`. 
+13.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Fixed Length Scenario` component, click on `Add Randomizer` and start typing `LightRandomizer`. 
     * For the range parameter of `Light Intensity Parameter`, set `Min` to `0.9` and `Max` to `1.1`. 
     * For the range parameter of `Rotation X`, set `Min` to `40` and `Max` to `80`. 
     * For the range parameter of `Rotation Y`, set `Min` to `-180` and `Max` to `180`. 
