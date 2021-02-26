@@ -7,8 +7,8 @@ In this first part of the tutorial, we will start by downloading and installing 
   - [Requirements](#reqs)
   - [Create a New Project](#step-1)
   - [Download the Perception, the URDF and the TCP connector Packages](#step-2)
-  - [Setup the Ground Truth Render Feature](#step-3)
-  - [Setup the Scene](#step-4)
+  - [Set Up the Ground Truth Renderer Feature](#step-3)
+  - [Set Up the Scene](#step-4)
 
 ---
 
@@ -72,9 +72,9 @@ Install the following packages with the provided git URLs:
 
 >Note: If you encounter a Package Manager issue, check the [Troubleshooting Guide](troubleshooting.md) for potential solutions.
 
-### <a name="step-3">Set Up Ground Truth Render Feature</a>
+### <a name="step-3">Set Up Ground Truth Renderer Feature</a>
 
-The ***Hierarchy***, ***Scene***, ***Game***, ***Inspector***, ***Project***, and ***Console*** windows of the Unity Editor, as well as the ***Play/Pause/Step*** toolbar have been highlighted below for reference, based on the default layout. Custom Unity Editor layouts may vary slightly. A top menu bar option is available to re-open any of these windows: Window > General.
+The ***Hierarchy***, ***Scene***, ***Game***, ***Inspector***, ***Project***, and ***Console*** windows of the Unity Editor, as well as the ***Play/Pause/Step*** toolbar have been highlighted below for reference, based on the default layout. Custom Unity Editor layouts may vary slightly. A top menu bar option is available to re-open any of these windows: ***Window > General***.
 
 <p align="center">
 <img src="Images/1_scene_overview.png"/>
@@ -101,7 +101,7 @@ The Perception package relies on a "Ground Truth Renderer Feature" to output lab
 #### The Scene
 Simply put in Unity, a Scene contains any object that exists in the world. This world can be a game, or in this case, a data-collection-oriented simulation. Every new project contains a Scene named `SampleScene`, which is automatically opened when the project is created. This Scene comes with several objects and settings that we do not need, so let's create a new one.
 
-1. In the _**Project**_ tab, right-click on the `Assets > Scenes` folder and click _**Create -> Scene**_. Name this new Scene `TutorialPoseEstimation` and double-click on it to open it. 
+1. In the _**Project**_ tab, right-click on the `Assets/Scenes` folder and click _**Create -> Scene**_. Name this new Scene `TutorialPoseEstimation` and double-click on it to open it. 
 
 The _**Hierarchy**_ tab of the editor displays all the Scenes currently loaded, and all the objects currently present in each loaded Scene, as shown below:
 <p align="center">
@@ -142,7 +142,7 @@ A Prefab is just a file, and you can easily create an instance of the object in 
 
 For your convenience, we have provided Prefabs for most of the components of the scene (the cube, goal, table, and floor).
 
-1. In the _**Project**_ tab, go to `Assets > TutorialAssets > Prefabs > Part1` and drag and drop the `Cube` Prefab into the _**Hierarchy**_ tab.
+1. In the _**Project**_ tab, go to `Assets/TutorialAssets/Prefabs/Part1` and drag and drop the `Cube` Prefab into the _**Hierarchy**_ tab.
 
 2. Repeat the above action with the `Goal`, `Table` and `Floor` Prefabs. 
 
@@ -157,7 +157,7 @@ For your convenience, we have provided Prefabs for most of the components of the
 #### Importing the Robot
 Finally we will add the robot and the URDF files in order to import the UR3 Robot. 
 
-1. In the _**Project**_ tab, go to `Assets > TutorialAssets > URDFs > ur3_with_gripper` and right click on the `ur3_with_gripper.urdf` file and select `Import Robot From Selected URDF file`. A window will pop up, keep the default **Y Axis** type and `VHACD` **Mesh Decomposer** in the Import menu. Then, click Import URDF. These actions are shown in the video below. 
+1. In the _**Project**_ tab, go to `Assets/TutorialAssets/URDFs/ur3_with_gripper` and right click on the `ur3_with_gripper.urdf` file and select `Import Robot From Selected URDF file`. A window will pop up, keep the default **Y Axis** type and `VHACD` **Mesh Decomposer** in the Import menu. Then, click Import URDF. These actions are shown in the video below. 
 
 >Note: Unity uses a left-handed coordinate system in which the y-axis points up. However, many robotics packages use a right-handed coordinate system in which the z-axis or x-axis point up. For this reason, it is important to pay attention to the coordinate system when importing URDF files or interfacing with other robotics software.
 

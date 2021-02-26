@@ -7,9 +7,9 @@ If you just want to run the completed project, this section can help you get up 
 **Table of Contents**
 - [Prerequisites](#Prerequisites)
 - [Add the Pose Estimation Model](#add-the-pose-estimation-model)
-- [Set up the ROS side](#set-up-the-ros-side)
-- [Set up the Unity side](#set-up-the-unity-side)
-- [Putting it together](#putting-it-together)
+- [Set Up the ROS Side](#set-up-the-ros-side)
+- [Set Up the Unity Side](#set-up-the-unity-side)
+- [Put It All Together](#putting-it-together)
 
 ---
 
@@ -17,7 +17,7 @@ If you just want to run the completed project, this section can help you get up 
 
 You will first need to **clone** this repository. 
 
-1. Open a terminal and put yourself where you want to host the repository. 
+1. Open a terminal and navigate to the folder where you want to host the repository. 
 ```bash
 git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose-Estimation.git
 ```
@@ -26,11 +26,11 @@ git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose
 
 ## <a name='setup'>Setup</a>
 
-1. Open the completed project. In the Unity Hub, click the `Add` button, and select `Object-Pose-Estimation/PoseEstimationDemoProject` from inside the file location where you cloned this repo. 
+1. Open the completed project. In the Unity Hub, click the `Add` button, and select `Object-Pose-Estimation/PoseEstimationDemoProject` from inside the file location where you cloned the repo. 
 
-2. Open the scene. Go to `Assets > Scenes` and double click on `TutorialPoseEstimation`. 
+2. Open the scene. Go to `Assets/Scenes` and double click on `TutorialPoseEstimation`. 
 
-3. The size of the images that will be used for pose estimation depends on a setting in the Game view. Select the `Game` view and select `Free Aspect`. Then select the **+**, with the message `Add new item` on it if you put your mouse over the + sign. For the Width select `650` and for the Height select `400`. A gif below shows you how to do it. 
+3. We now need to set the size of the images used. In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `650` and `Height` to `400`. The gif below depicts these actions.
 
 <p align="center">
 <img src="Gifs/2_aspect_ratio.gif"/>
@@ -42,10 +42,10 @@ In your root `Object-Pose-Estimation` folder, you should have a `ROS` folder. In
 
 1. Download the [pose estimation model](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) we have trained.
 
-2. Go inside the `ROS/src/ur3_moveit` folder and create a folder `models`. Copy the `UR3_single_cube_model.tar` file you've just downloaded into this folder.
+2. Go inside the `ROS/src/ur3_moveit` folder and create a folder `models`. Copy the `UR3_single_cube_model.tar` file you just downloaded into this folder.
 
 
-## Set up the ROS side
+## Set Up the ROS Side
 
 >Note: This project has been developed with Python 3 and ROS Noetic.
 
@@ -84,17 +84,17 @@ source devel/setup.bash
 The ROS workspace is now ready to accept commands!
 
 
-## Set up the Unity side
+## Set Up the Unity Side
 
-1. At the top of your screen, open the ROS settings by selecting `Robotics` > `ROS Settings`. Fill `ROS IP Address` and `Override Unity IP` with the loopback IP address `127.0.0.1`. 
+1. At the top of your screen, open the ROS settings by selecting `Robotics/ROS Settings`. Fill `ROS IP Address` and `Override Unity IP` with the loopback IP address `127.0.0.1`. 
 
-2. Ensure that the ROS Port is set to `10000` and the Unity Port is set to `5005`. You can leave the Show HUD box unchecked. This HUD can be helpful for debugging message and service requests with ROS. You may turn this on if you encounter connection issues.
+2. Ensure that `ROS Port` is set to `10000` and `Unity Port` is set to `5005`.
 
 <p align="center">
 <img src="Images/4_ros_settings.png" width="400"/>
 </p>
 
-## Putting it together
+## Put It All Together
 
 Run the following `roslaunch` command in order to start roscore, set the ROS parameters, start the server endpoint, start the Mover Service and Pose Estimation nodes, and launch MoveIt.
 
@@ -104,7 +104,7 @@ Run the following `roslaunch` command in order to start roscore, set the ROS par
 roslaunch ur3_moveit pose_est.launch 
 ```
 
-This launch file also loads all relevant files and starts ROS nodes required for trajectory planning for the UR3 robot. The launch files for this project are available in the package's launch directory, i.e. `src/ur3_moveit/launch/`. 
+This launch file also loads all relevant files and starts ROS nodes required for trajectory planning for the UR3 robot. The launch files for this project are available in the package's launch directory, i.e. `src/ur3_moveit/launch`. 
 
 This launch will print various messages to the console, including the set parameters and the nodes launched. The final message should confirm `You can start planning now!`.
 

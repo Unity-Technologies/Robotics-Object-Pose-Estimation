@@ -1,14 +1,14 @@
 # Object Pose Estimation Tutorial: Part 3
 
-In [Part 1](1_set_up_the_scene.md) of the tutorial, we learned how to create our scene in the Unity editor.
+In [Part 1](1_set_up_the_scene.md) of the tutorial, we learned how to create our Scene in Unity Editor.
 
 In [Part 2](2_set_up_the_data_collection_scene.md) of the tutorial, we learned:
 * How to equip the camera for the data collection
-* How to equip the cube for the data collection 
-* How to create your own randomizer 
-* How to add our custom randomizer
+* How to set up labelling and label configurations
+* How to create your own Randomizer 
+* How to add our custom Randomizer  
 
-In this part, we will be collecting a large dataset of RGB images of the scene, and the corresponding pose of the cube. We will then use this data to train a machine learning model to predict the cube's position and rotation from images taken by our camera. We will then be ready to use the trained model for our pick-and-place task in [Part 4](4_pick_and_place.md).
+In this part, we will be collecting a large dataset of RGB images of the Scene, and the corresponding pose of the cube. We will then use this data to train a machine learning model to predict the cube's position and rotation from images taken by our camera. We will then be ready to use the trained model for our pick-and-place task in [Part 4](4_pick_and_place.md).
 
 Steps included in this part of the tutorial:
 
@@ -27,36 +27,40 @@ We need to collect data for the training process and data for the validation one
 
 We have chosen a training dataset of 30,000 images and a validation dataset of 3,000 images. 
 
-1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in the `Fixed Length Scenario` and in `Constants` set the `Total Iterations` to 30000.
+1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Fixed Length Scenario`, set the `Total Iterations` field under `Constants` to 30000.
 
-2. Press play and wait until the simulation is done. It should take a bit of time (~10 min). Once it is done, go to the _**Console**_ tab which is the tag on the right of the _**Project**_ tab. 
+2. Press play and wait until the simulation is done. It should take a bit of time (~10 min).
 
-You should see something similar to the following: 
+3. Select `Main Camera` again to bring up its _**Inspector**_ view. At the bottom of the UI for `Perception Camera`, there are buttons for showing the latest dataset output folder and copying its path to clipboard. An example is shown below (Mac OS):
 
 <p align="center">
-<img src="Images/3_saved_data.png"/>
+<img src="Images/3_output_path.png" width = "700"/>
 </p>
 
-In my case the data is written to `/Users/jonathan.leban/Library/Application Support/DefaultCompany/SingleCubePoseEstimationProject` but for you the data path will be different. Go to that directory from your terminal.
+1. Click _**Show Folder**_ to show and highlight the folder in your operating system's file explorer.
 
-You should then see something similar to the following: 
+2. Change this folder's name to `UR3_single_cube_training`.   
+
+3. Enter the folder
+
+You should then see something similar to this: 
 <p align="center">
-<img src="Images/3_data_logs.png"/>
+<img src="Images/3_data_logs.png" width = "800"/>
 </p>
 
-3. Change this folder's name to `UR3_single_cube_training`. 
+Now we need to collect the validation dataset. 
 
-4. Now we need to collect the validation dataset. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in the `Fixed Length Scenario` and in `Constants` set the `Total Iterations` to 3000.
+1. Back in Unity Editor, Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Fixed Length Scenario`, set the `Total Iterations` field under `Constants` to 3000.
 
-5. Press play and wait until the simulation is done. Once it is done go to the _**Console**_ tab and go to the directory where the data has been saved. 
+2. Press play and wait until the simulation is done. Once the simulation finishes, follow the same steps as before to navigate to the output folder.
 
-6. Change the folder name where this latest data was saved to `UR3_single_cube_validation`. 
+3. Change the folder name where the latest data was saved to `UR3_single_cube_validation`. 
 
-7. **(Optional)**: Move the `UR3_single_cube_training` and `UR3_single_cube_validation` folders to a directory of your choice.  
+4. **(Optional)**: Move the `UR3_single_cube_training` and `UR3_single_cube_validation` folders to a directory of your choice.  
 
 
 ## <a name="step-2">Train the Deep Learning Model</a>
-Now its time to train our deep learning model! We've provided the model training code for you, but if you'd like to learn more about it - or make your own changes - you can dig into the details [here](../Model).
+Now it's time to train our deep learning model! We've provided the model training code for you, but if you'd like to learn more about it - or make your own changes - you can dig into the details [here](../Model).
 
 This step can take a long time if your computer doesn't have GPU support (~5 days on CPU). Even with a GPU, it can take around ~10 hours. We have provided an already trained model as an alternative to waiting for training to complete. If you would like to use this provided model, you can proceed to [Part 4](4_pick_and_place.md).
 
@@ -73,14 +77,14 @@ If you would like to run using Docker, you can follow the [Docker steps provided
 #### Option B: Using Conda 
 To run this project locally, you will need to install [Anaconda](https://docs.anaconda.com/anaconda/install/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html). 
 
-If running locally without Docker, we first need to create a conda virtual environment and install the dependencies for our machine learning model. If you only have access to CPUs, install the dependencies specified in the `environment.yml` file. If your development machine has GPU support, you can choose to use the `environment-gpu.yml` file instead.
+If running locally without Docker, we first need to create a Conda virtual environment and install the dependencies for our machine learning model. If you only have access to CPUs, install the dependencies specified in the `environment.yml` file. If your development machine has GPU support, you can choose to use the `environment-gpu.yml` file instead.
 
 2. In a terminal window, enter the following command to create the environment. Replace `<env-name>` with an environment name of your choice, e.g. `pose-estimation`:
 ```bash
 conda env create -n <env-name> -f environment.yml
 ```
 
-Then, you need to activate the conda environment.
+Then, you need to activate the Conda environment.
 
 3. Still in the same terminal window, enter the following command:
 ```bash
@@ -97,18 +101,17 @@ First, we need to specify the path to the folders where your training and valida
 
 4. In the [config.yaml](../Model/config.yaml), under `system`, you need to set the argument `data/root` to the path of the  directory containing your data folders. For example, since I put my data (`UR3_single_cube_training` and `UR3_single_cube_validation`) in a folder called `data` in Documents, I set the following:
 ```bash
-  data_root: /Users/jonathan.leban/Documents/data
+  data_root: /Users/<user-name>/Documents/data
 ```
 
 Second, we need to modify the location where the model is going to be saved: 
 
-5. In the [config.yaml](../Model/config.yaml), under `system`, you need to set the argument `log_dir_system` to the full path to the output folder where your model's results will be saved. For example, I created a new directory called `models` in my Documents, and then set the following:
+5. In the [config.yaml](../Model/config.yaml), under `system`, you need to set the argument `log_dir_system` to the full path of the output folder where your model's results will be saved. For example, I created a new directory called `models` in my Documents, and then set the following:
 ```bash
-log_dir_system: /Users/jonathan.leban/Documents/models
+log_dir_system: /Users/<user-name>/Documents/models
 ```
 
 ### Training the model
-Now its time to train our deep learning model!
 
 6. If you are not already in the `Object-Pose-Estimation/Model` directory, navigate there. 
 
@@ -142,7 +145,7 @@ python -m pose_estimation.cli evaluate
 
 
 ### Exercises for the Reader
-**Optional**: If you would like to learn more about randomizers and apply domain randomization to this scene more thoroughly, check out our further exercises for the reader [here](5_more_randomizers.md).
+**Optional**: If you would like to learn more about Randomizers and apply domain randomization to this scene more thoroughly, check out our further exercises for the reader [here](5_more_randomizers.md).
 
 ### Proceed to [Part 4](4_pick_and_place.md).
 
