@@ -166,7 +166,7 @@ Let's go through the code above and understand each part:
 * The `YRotationRandomizer` class extends `Randomizer`, which is the base class for all Randomizers that can be added to a Scenario. This base class provides a plethora of useful functions and properties that can help catalyze the process of creating new Randomizers.
 * The `FloatParameter` field contains a seeded random number generator. We can set the sampling range and the distribution of this value in the editor UI for the Randomizer. 
 * The `OnIterationStart()` function is a life-cycle method on all `Randomizer`s. It is called by the Scenario every Iteration (e.g. once per frame, if each Iteration runs for one frame). 
-* The `tagManager` is an object available to every `Randomizer` which helps us find GameObjects tagged with a given `RandomizerTag`. In our case, we query the `tagManager` to gather references to all the `YRotationRandomizerTag` currently present in the Scene.
+* The `tagManager` is an object available to every `Randomizer` which helps us find GameObjects tagged with a given `RandomizerTag`. In our case, we query the `tagManager` to gather references to all the `YRotationRandomizerTag`s currently present in the Scene.
 * We then loop through these `tags` to rotate the object that each tag is attached to:
     * `rotationRange.Sample()` gives us a random float in the specified range.
     * We then rotate this object using the `SetYRotation()` method of the tag, which we will write in a moment.
