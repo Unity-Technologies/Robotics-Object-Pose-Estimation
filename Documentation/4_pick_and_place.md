@@ -120,7 +120,7 @@ Prefabs have been provided for the UI elements and Trajectory Planner for conven
 <img src="Images/4_ros_settings.png" width="400"/>
 </p>
 
-Opening the ROS Settings window creates a `ROSConnectionPrefab` asset in `Assets/Resources` folder, with the user-input settings. When the static `ROSConnection.instance` is referenced in a script, if a `ROSConnection` instance is not already present, the Prefab will be instantiated in the Unity scene, and the connection will begin.
+Opening the ROS Settings window creates a `ROSConnectionPrefab` asset in the `Assets/Resources` folder, with the user-input settings. When the static `ROSConnection.instance` is referenced in a script, if a `ROSConnection` instance is not already present, the Prefab will be instantiated in the Unity scene, and the connection will begin.
 
 >Note: While using the ROS Settings window is the suggested workflow, you may still manually create a GameObject with an attached `ROSConnection` component.
 
