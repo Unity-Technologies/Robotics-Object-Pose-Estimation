@@ -112,7 +112,7 @@ Each Scenario executes a number of Iterations, and each Iteration carries on for
 
 
 #### Writing our Custom Object Rotation Randomizer
-The randomization workflow involves two types of C# classes: Randomizers and RandomizerTags. A Randomizers are added to the Scenario and performs the actual randomization tasks, while RandomizerTags are attached to objects in the scene, so that Randomizers know which objects to target. One Randomizer can target many different RandomizerTags.
+The randomization workflow involves two types of C# classes: Randomizers and RandomizerTags. Randomizers are added to the Scenario and perform the actual randomization tasks, while RandomizerTags are attached to objects in the scene, so that Randomizers know which objects to target. One Randomizer can target many different RandomizerTags.
 
 First, we will write a Randomizer to randomly rotate the cube around its y-axis on each Iteration of the Scenario. 
 
