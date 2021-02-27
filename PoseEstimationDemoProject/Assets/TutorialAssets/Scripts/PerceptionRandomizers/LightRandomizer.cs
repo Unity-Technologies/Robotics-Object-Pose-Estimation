@@ -10,7 +10,7 @@ using UnityEngine.Perception.Randomization.Samplers;
 [AddRandomizerMenu("Perception/Light Randomizer")]
 public class LightRandomizer : Randomizer
 {
-    public FloatParameter lightIntensityParameter = new FloatParameter{ value = new UniformSampler(.8f, 1.2f)};
+    public FloatParameter lightIntensityParameter = new FloatParameter{ value = new UniformSampler(.9f, 1.1f)};
 
     public FloatParameter rotationX = new FloatParameter { value = new UniformSampler(40, 80)};
 
