@@ -216,7 +216,7 @@ If you return to your list of Randomizers in the Inspector view of `Simulation S
 10. Run the simulation by clicking the **▷** (play) button located at the top middle section of the editor, and inspect how the cube now switches between different orientations. You can pause the simulation and then use the step button (to the right of the pause button) to move the simulation one frame forward and clearly see the the cube's y-rotation changing. You should see something similar to the following. Note that the 3D bounding box visualization does not update as you step through frames, but this does not affect the output.
 
 <p align="center">
-<img src="Gifs/2_y_rotation_randomizer.gif" height=441 width=800/>
+<img src="Gifs/2_y_rotation_randomizer.gif" height=461 width=800/>
 </p>
 
 #### Randomizing Object Positions
