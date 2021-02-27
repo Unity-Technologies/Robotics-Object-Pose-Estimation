@@ -232,7 +232,7 @@ To save time, we have provided a pre-written custom Randomizer to do this.
     * Drag and drop the base of the robot from the ***Hierarchy*** (the `ur3_with_gripper/world/base_link/base` object) to the `Robot Base` field.
 
 <p align="center">
-<img src="Gifs/2_robot_randomizer_settings.gif" height=411 width=800 />
+<img src="Gifs/2_robot_randomizer_settings.gif" height=658 width=900/>
 </p>
 
 12.  Now we need to add the corresponding RandomizerTag to the cube. 
