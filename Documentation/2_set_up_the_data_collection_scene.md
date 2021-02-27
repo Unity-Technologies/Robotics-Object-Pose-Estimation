@@ -127,6 +127,7 @@ Note that while _**Visual Studio**_ is the default option, you can choose any te
 6. Remove the contents of the class and copy/paste the code below:
 
 ```C#
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -139,7 +140,7 @@ using UnityEngine.Perception.Randomization.Samplers;
 [AddRandomizerMenu("Perception/Y Rotation Randomizer")]
 public class YRotationRandomizer : Randomizer
 {
-    public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(-180f, 180f)}; // in range (0, 1)
+    public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(0f, 360f)}; // in range (0, 1)
 
     protected override void OnIterationStart()
     {
@@ -153,7 +154,6 @@ public class YRotationRandomizer : Randomizer
         }
     }
 }
-
 
 ```
 
@@ -255,7 +255,7 @@ If you press **▷** (play) now, you should see the `Cube` and `Goal` objects mo
 
 Now we will add another Randomizer to introduce some variation into the Scene's lighting. 
 
-13.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Fixed Length Scenario` component, click on `Add Randomizer` and start typing `LightRandomizer`. 
+13.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `LightRandomizer`. 
     * For the range parameter of `Light Intensity Parameter`, set `Min` to `0.9` and `Max` to `1.1`. 
     * For the range parameter of `Rotation X`, set `Min` to `40` and `Max` to `80`. 
     * For the range parameter of `Rotation Y`, set `Min` to `-180` and `Max` to `180`. 
