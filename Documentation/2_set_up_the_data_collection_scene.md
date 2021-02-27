@@ -209,7 +209,7 @@ If you return to your list of Randomizers in the Inspector view of `Simulation S
 9. Select the `Cube` GameObject and in the _**Inspector**_ tab, add a `YRotationRandomizerTag` component. 
 
 <p align="center">
-<img src="Gifs/2_y_rotation_randomizer_settings.gif" height=550 width=1020/>
+<img src="Gifs/2_y_rotation_randomizer_settings.gif" height=550 width=900/>
 </p>
 
 
@@ -232,7 +232,7 @@ To save time, we have provided a pre-written custom Randomizer to do this.
     * Drag and drop the base of the robot from the ***Hierarchy*** (the `ur3_with_gripper/world/base_link/base` object) to the `Robot Base` field.
 
 <p align="center">
-<img src="Gifs/2_robot_randomizer_settings.gif" height=508 />
+<img src="Gifs/2_robot_randomizer_settings.gif" height=411 width=800 />
 </p>
 
 12.  Now we need to add the corresponding RandomizerTag to the cube. 
