@@ -4,25 +4,27 @@ using System;
 using UnityEngine;
 using UnityEngine.Perception.Randomization.Parameters;
 using UnityEngine.Perception.Randomization.Randomizers;
+using UnityEngine.Perception.Randomization.Samplers;
 
 [Serializable]
 [AddRandomizerMenu("Perception/Light Randomizer")]
-public class LightRandomizer : InferenceRandomizer
+public class LightRandomizer : Randomizer
 {
-    public FloatParameter lightIntensityParameter; // in range (0.8, 1.2)
+    public FloatParameter lightIntensityParameter = new FloatParameter{ value = new UniformSampler(.9f, 1.1f)};
 
-    public FloatParameter rotationX; // in range (40, 80)
+    public FloatParameter rotationX = new FloatParameter { value = new UniformSampler(40, 80)};
 
-    public FloatParameter rotationY; // in range (-180, 180)
+    public FloatParameter rotationY = new FloatParameter { value = new UniformSampler(-180, 180)};
 
-    public ColorRgbParameter lightColorParameter; //(0.4, 1)
+    public ColorRgbParameter lightColorParameter = new ColorRgbParameter
+    {
+        red = new UniformSampler(.5f, 1f),
+        green = new UniformSampler(.5f, 1f),
+        blue = new UniformSampler(.5f, 1f),
+        alpha = new ConstantSampler(1f)
+    };
 
     protected override void OnIterationStart()
-    {
-        OnCustomIteration();
-    }
-
-    public override void OnCustomIteration()
     {
         /*Runs at the start of every iteration*/
         IEnumerable<LightRandomizerTag> tags = tagManager.Query<LightRandomizerTag>();

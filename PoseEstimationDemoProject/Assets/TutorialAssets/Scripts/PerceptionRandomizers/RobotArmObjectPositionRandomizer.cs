@@ -4,11 +4,12 @@ using System;
 using UnityEngine;
 using UnityEngine.Perception.Randomization.Parameters;
 using UnityEngine.Perception.Randomization.Randomizers;
+using UnityEngine.Perception.Randomization.Samplers;
 
 
 [Serializable]
 [AddRandomizerMenu("Perception/Robot Arm Object Position Randomizer")]
-public class RobotArmObjectPositionRandomizer : InferenceRandomizer
+public class RobotArmObjectPositionRandomizer : Randomizer
 {
     /*  Chooses positions on the plane for placing all objects with the corresponding tag.
      *      - Each object has a radius (defined on the tag, computed per-object based on its bounds)
@@ -33,7 +34,7 @@ public class RobotArmObjectPositionRandomizer : InferenceRandomizer
     public GameObject robotBase;
     public float minRobotReachability;
     public float maxRobotReachability;
-    public FloatParameter random;  //[0, 1]
+    private FloatParameter random = new FloatParameter {value = new UniformSampler(0f, 1f)};
 
     private SurfaceObjectPlacer placer;
 
@@ -47,11 +48,6 @@ public class RobotArmObjectPositionRandomizer : InferenceRandomizer
 
 
     protected override void OnIterationStart()
-    {
-        OnCustomIteration();
-    }
-
-    public override void OnCustomIteration()
     {
         placer.IterationStart();
 

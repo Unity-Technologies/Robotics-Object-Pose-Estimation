@@ -1,7 +1,7 @@
 # Pose-Estimation-Demo Tutorial: Troubleshooting
 
 **Table of Contents**
-  - [Part 1: Create Unity scene with imported URDF](#part-1-create-unity-scene-with-imported-urdf)
+  - [Part 1: Create a Unity Scene with an Imported URDF](#part-1-create-unity-scene-with-imported-urdf)
     - [Package Installation](#package-installation)
     - [Assets, Materials](#assets-materials)
     - [URDF Importer](#urdf-importer)
@@ -12,24 +12,24 @@
     - [Docker, ROS-TCP Connection](#docker-ros-tcp-connection)
     - [Ubuntu](#ubuntu)
 
-## Part 1: Create Unity scene with imported URDF
+## Part 1: Create a Unity Scene with an Imported URDF
 
 ### Package Installation
 - If you are receiving a `[Package Manager Window] Unable to add package ... xcrun: error: invalid developer path...`, you may need to install the [Command Line Tools](https://developer.apple.com/library/archive/technotes/tn2339/_index.html) package for macOS via `xcode-select --install`.
   
 ### Assets, Materials
 - Upon import, the cube and floor materials may appear to be bright pink (i.e. missing texture).
-  - Cube: Go to `Assets > TutorialAssets > Materials`. Select the `AlphabetCubeMaterial`. There is a section called `Surface Inputs`. If the Base Map is not assigned, select the circle next to this field. Click on it and start typing `NonsymmetricCubeTexture` and select it when it appears. Apply this updated `AlphabetCubeMaterial` to the Cube. Your Inspector view should look like the following:
+  - Cube: Go to `Assets/TutorialAssets/Materials`. Select the `AlphabetCubeMaterial`. There is a section called `Surface Inputs`. If the Base Map is not assigned, select the circle next to this field. Click on it and start typing `NonsymmetricCubeTexture` and select it when it appears. Apply this updated `AlphabetCubeMaterial` to the Cube. Your Inspector view should look like the following:
   ![](Images/1_alphabet_material.png)
   - Floor: Assign the `NavyFloor` material to the Floor object.
 - If all of the project materials appear to have missing textures, ensure you have created the project using the Universal Render Pipeline.
-- If the UR3 arm's base has some missing textures (e.g. pink ovals), in the Project window, navigate to `Assets/TutorialAssets/URDFs/ur3_with_gripper/ur_description/meshes/ur3/visual/base.dae`. Select the base, and in the Inspector window, open the `Materials` tab. If the `Material_001` and `_002` fields are blank, assign them to `Assets/TutorialAssets/URDFs/ur3_with_gripper/ur_description/Materials/Material_001` and `_002`, respectively. 
+- If the UR3 arm's base has some missing textures (e.g. pink ovals), in the Project window, navigate to `Assets/TutorialAssets/URDFs/ur3_with_gripper/ur_description/meshes/ur3/visual >base.dae`. Select the base, and in the ***Inspector*** window, open the ***Materials*** tab. If the `Material_001` and `_002` fields are blank, assign them to `Assets/TutorialAssets/URDFs/ ur3_with_gripper/ur_description/Materials/Material_001` and `_002`, respectively. 
   
   ![](Images/faq_base_mat.png)
 
 ### URDF Importer
-- If you are not seeing `Import Robot from URDF` in the `Assets` menu, check the console for compile errors. The project must compile correctly before the editor tools become available. 
-- If the robot appears loose/wiggly or is not moving with no console errors, ensure on the Controller script of the `ur3_with_gripper` that the `Stiffness` is **10000**, the `Damping` is **1000** and the `Force Limit` is **1000**. 
+- If you are not seeing `Import Robot from URDF` in the `Assets` menu, check the ***Console*** for compile errors. The project must compile correctly before the editor tools become available. 
+- If the robot appears loose/wiggly or is not moving with no console errors, ensure on the `Controller` script of the `ur3_with_gripper` that the `Stiffness` is **10000**, the `Damping` is **1000** and the `Force Limit` is **1000**. 
 - Note that the world-space origin of the robot is defined in its URDF file. In this sample, we have assigned it to sit on top of the table, which is at `(0, 0.77, 0)` in Unity coordinates. Moving the robot from its root position in Unity will require a change to its URDF definition.	
 
     ```xml	
@@ -72,4 +72,4 @@
   - If the problem persists, add the `-j1` flag to the `catkin_make` command.
 
 ### Ubuntu
-- Running Unity and Docker on Ubuntu may throw a `System.Net.SocketException: Address already in use` error when using the loopback address. If this is the case, in your Unity Editor, under Robotics > ROS Settings, leave the `Override Unity IP Address` blank to let Unity automatically determine the address. Change the `ROS IP Address` to the IP of your Docker container, most likely `172.17.0.X`. You may need to modify these settings based on your unique network setup.
+- Running Unity and Docker on Ubuntu may throw a `System.Net.SocketException: Address already in use` error when using the loopback address. If this is the case, in your Unity Editor, under ***Robotics > ROS Settings***, leave the `Override Unity IP Address` blank to let Unity automatically determine the address. Change the `ROS IP Address` to the IP of your Docker container, most likely `172.17.0.X`. You may need to modify these settings based on your unique network setup.

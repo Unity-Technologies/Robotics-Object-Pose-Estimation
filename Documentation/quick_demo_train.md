@@ -7,14 +7,14 @@ To learn how to build something like this from scratch, see [Part 1](1_set_up_th
 **Table of Contents**
 - [Prerequisites](#Prerequisites)
 - [Setup](#setup)
-- [Swichting to Data Collection Mode](#switch)
+- [Switching to Data Collection Mode](#switch)
 - [Data Collection](#data-collection)
 
 ## <a name="reqs">Prerequisites</a>
 
 To follow this tutorial you need to **clone** this repository even if you want to create your Unity project from scratch. 
 
-1. Open a terminal and put yourself where you want to host the repository. 
+1. Open a terminal and navigate to the folder where you want to host the repository. 
 ```bash
 git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose-Estimation.git
 ```
@@ -25,9 +25,9 @@ git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose
 
 ## <a name='setup'>Setup</a>
 
-1. Open the scene. Go to `Assets > Scenes` and double click on `TutorialPoseEstimation`. 
+1. Once the project is opened, in the ***Project*** tab, go to `Assets > Scenes` and double click on `TutorialPoseEstimation` to open the Scene created for this tutorial. 
 
-2. The size of the images that will be used for pose estimation depends on a setting in the Game view. Select the `Game` view and select `Free Aspect`. Then select the **+**, with the message `Add new item` on it if you put your mouse over the + sign. For the Width select `650` and for the Height select `400`. A gif below shows you how to do it. 
+2. We now need to set the size of the images used. In the ***Game*** view, click on the dropdown menu in front of `Display 1`. Then, click **+** to create a new preset. Make sure `Type` is set to `Fixed Resolution`. Set `Width` to `650` and `Height` to `400`. The gif below depicts these actions.
 
 <p align="center">
 <img src="Gifs/2_aspect_ratio.gif"/>
@@ -38,13 +38,13 @@ The completed project is set up for inference mode by default, so we must switch
 
 1. Uncheck the `ROSObjects` GameObject in the _**Hierarchy**_ tab to disable it.
 
-2. On the `Simulation Scenario` GameObject, check the `Fixed Length Scenario` component to enable it.
+2. On the `Simulation Scenario` GameObject, make sure that `Pose Estimation Scenario` is enabled, and that its `Automatic Iteration` property is checked.
 
 3. On the `Main Camera` GameObject, check the `Perception Camera (Script)` component to enable it.
 
 ## <a name="data-collection">Data Collection</a>
-To get strarted with the data collection, follow the instructions in [Part 3: Collect the Training and Validation Data](3_data_collection_model_training.md#step-1) of the tutorial. This section will explain how to set the random seed of the environment, choose how many training data examples you'd like to collect, and get it running. 
+To get started with the data collection, follow the instructions in [Part 3: Collect the Training and Validation Data](3_data_collection_model_training.md#step-1) of the tutorial. This section will explain how to set the a random seed for the environment, choose how many training data examples you'd like to collect, and get things running. 
 
-If you'd like to then move on to training a pose estimation model on the data you've collected, move on to [Part 3: Train the Deep Learning Model](3_data_collection_model_training.md#step-2). 
+If you'd like to move on to training a pose estimation model on the data you've collected, navigate to [Part 3: Train the Deep Learning Model](3_data_collection_model_training.md#step-2). 
 
 Have fun!

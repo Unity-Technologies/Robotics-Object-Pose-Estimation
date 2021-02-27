@@ -7,7 +7,7 @@ using UnityEngine.Perception.Randomization.Randomizers;
 
 [Serializable]
 [AddRandomizerMenu("Perception/Uniform Pose Randomizer")]
-public class UniformPoseRandomizer : InferenceRandomizer
+public class UniformPoseRandomizer : Randomizer
 {
     /*  Randomizes object's position and rotation relative to a fixed starting pose, over the specified range.
      *  
@@ -22,11 +22,6 @@ public class UniformPoseRandomizer : InferenceRandomizer
     public FloatParameter random; //(-1, 1)
 
     protected override void OnIterationStart()
-    {
-        OnCustomIteration();
-    }
-
-    public override void OnCustomIteration()
     {
         IEnumerable<UniformPoseRandomizerTag> tags = tagManager.Query<UniformPoseRandomizerTag>();
         foreach (UniformPoseRandomizerTag tag in tags)
