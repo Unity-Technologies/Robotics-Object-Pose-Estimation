@@ -52,6 +52,7 @@ To measure the success of grasping in simulation using our pre-trained model for
 |With occlusion    |    7    |     6    |      54         |
 |All               |    89   |     11   |      89         |
 
+> Note: Data for the above experiment was collected in Unity 2020.2.1f1.
 
 ---
 
