@@ -16,12 +16,12 @@ To follow this tutorial you need to **clone** this repository even if you want t
 
 1. Open a terminal and navigate to the folder where you want to host the repository. 
 ```bash
-git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose-Estimation.git
+git clone --recurse-submodules https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation.git
 ```
 
 2. [Install Unity `2020.2.*`.](install_unity.md)
 
-3. Open the completed project. To do so, open Unity Hub, click the `Add` button, and select `PoseEstimationDemoProject` from the root `Object-Pose-Estimation` folder. 
+3. Open the completed project. To do so, open Unity Hub, click the `Add` button, and select `PoseEstimationDemoProject` from the root `Robotics-Object-Pose-Estimation` folder. 
 
 ## <a name='setup'>Setup</a>
 
