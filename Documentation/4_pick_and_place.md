@@ -177,7 +177,7 @@ This callback is automatically run when the Pose Estimation service response arr
 
 Note that the `TrajectoryPlanner` component shows its member variables in the _**Inspector**_ window, which need to be assigned.
 
-1. Return to Unity. Select the `ROSObjects/Publisher` GameObject. Assign the `ur3_with_gripper` GameObject to the `Robot` field. Drag and drop the `Cube` GameObject from the _**Hierarchy**_ onto the `Target` Inspector field. Drag and drop `Goal` to the `Goal` field. Finally, assign the `Simulation Scenario` object to the `Scenario` field. You should see the following:
+6. Return to Unity. Select the `ROSObjects/Publisher` GameObject. Assign the `ur3_with_gripper` GameObject to the `Robot` field. Drag and drop the `Cube` GameObject from the _**Hierarchy**_ onto the `Target` Inspector field. Drag and drop `Goal` to the `Goal` field. Finally, assign the `Simulation Scenario` object to the `Scenario` field. You should see the following:
 
 <p align="center">
 <img src="Images/4_trajectory_field.png" width="500"/>

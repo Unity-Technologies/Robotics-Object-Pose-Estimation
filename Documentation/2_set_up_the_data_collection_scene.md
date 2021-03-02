@@ -107,6 +107,12 @@ To start randomizing your simulation, you will first need to add a **Scenario** 
 1. In the _**Hierarchy**_, click the **+** button and select `Create Empty`. Rename the newly created GameObject `Simulation Scenario`.
 
 2. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `Pose Estimation Scenario` in the search bar that appears, until the `Pose Estimation Scenario` script is found, with a **#** icon to the left. Click on the script. 
+   
+3. Still in the _**Inspector**_ tab of the `Simulation Scenario` GameObject, enable the `Automatic Iteration` flag. 
+
+<p align="center">
+<img src="Images/2_scenario_auto.png" height=500/>
+</p>
 
 Each Scenario executes a number of Iterations, and each Iteration carries on for a number of frames. These are timing elements you can leverage in order to customize your Scenarios and the timing of your randomizations. 
 
@@ -116,15 +122,15 @@ The randomization workflow involves two types of C# classes: Randomizers and Ran
 
 First, we will write a Randomizer to randomly rotate the cube around its y-axis on each Iteration of the Scenario. 
 
-3. In the _**Project**_ tab, right-click on the **Scripts** folder and select `Create -> C# Script`. Name your new script file `YRotationRandomizer`.
+4. In the _**Project**_ tab, right-click on the **Scripts** folder and select `Create -> C# Script`. Name your new script file `YRotationRandomizer`.
 
-4. Create another script and name it `YRotationRandomizerTag`.
+5. Create another script and name it `YRotationRandomizerTag`.
 
-5. Double-click `YRotationRandomizer.cs` to open it in _**Visual Studio**_.
+6. Double-click `YRotationRandomizer.cs` to open it in _**Visual Studio**_.
 
 Note that while _**Visual Studio**_ is the default option, you can choose any text editor of your choice to open C# files from Unity. You can change this setting in _**Preferences -> External Tools -> External Script Editor**_.
 
-6. Remove the contents of the class and copy/paste the code below:
+7. Remove the contents of the class and copy/paste the code below:
 
 ```C#
 using System.Collections;
@@ -171,7 +177,7 @@ Let's go through the code above and understand each part:
     * `rotationRange.Sample()` gives us a random float in the specified range.
     * We then rotate this object using the `SetYRotation()` method of the tag, which we will write in a moment.
 
-7. Open `YRotationRandomizerTag.cs` and replace its contents with the code below:
+8. Open `YRotationRandomizerTag.cs` and replace its contents with the code below:
 
 ```C#
 using UnityEngine;
@@ -200,20 +206,20 @@ The `Start` method is automatically called once, at runtime, before the first fr
 
 If you return to your list of Randomizers in the Inspector view of `Simulation Scenario`, you can now add this new Randomizer.
 
-8. Add `YRotationRandomizer` to the list of Randomizers in `Simulation Scenario` (see the gif after the next action). You will notice that you can adjust the sampling distribution and range of `Rotation Range` here, as mentioned above.
+9. Add `YRotationRandomizer` to the list of Randomizers in `Simulation Scenario` (see the gif after the next action). You will notice that you can adjust the sampling distribution and range of `Rotation Range` here, as mentioned above.
 
 <p align="center">
 <img src="Images/2_y_rotation_randomizer.png" height=100/>
 </p>
 
-9. Select the `Cube` GameObject and in the _**Inspector**_ tab, add a `YRotationRandomizerTag` component. 
+10. Select the `Cube` GameObject and in the _**Inspector**_ tab, add a `YRotationRandomizerTag` component. 
 
 <p align="center">
 <img src="Gifs/2_y_rotation_randomizer_settings.gif" height=550 width=900/>
 </p>
 
 
-10. Run the simulation by clicking the **▷** (play) button located at the top middle section of the editor, and inspect how the cube now switches between different orientations. You can pause the simulation and then use the step button (to the right of the pause button) to move the simulation one frame forward and clearly see the the cube's y-rotation changing. You should see something similar to the following. Note that the 3D bounding box visualization does not update as you step through frames, but this does not affect the output.
+11. Run the simulation by clicking the **▷** (play) button located at the top middle section of the editor, and inspect how the cube now switches between different orientations. You can pause the simulation and then use the step button (to the right of the pause button) to move the simulation one frame forward and clearly see the the cube's y-rotation changing. You should see something similar to the following. Note that the 3D bounding box visualization does not update as you step through frames, but this does not affect the output.
 
 <p align="center">
 <img src="Gifs/2_y_rotation_randomizer.gif" height=481 width=800/>
@@ -225,7 +231,7 @@ It is great that we can now rotate the cube, but we also want to move it around 
 
 To save time, we have provided a pre-written custom Randomizer to do this. 
 
-11. Select the `Simulation Scenario` GameObject, and do the following:
+12. Select the `Simulation Scenario` GameObject, and do the following:
     * In the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click `Add Randomizer` and start typing `RobotArmObjectPositionRandomizer`. 
     * Set `Min Robot Reachability` to `0.2` and `Max Robot Reachability` to `0.4`. 
     * On the `Plane` field, click on the circular button to the right side and start typing `ObjectPlacementPlane` and then double click on the GameObject that appears. 
@@ -235,7 +241,7 @@ To save time, we have provided a pre-written custom Randomizer to do this.
 <img src="Gifs/2_robot_randomizer_settings.gif" height=658 width=950/>
 </p>
 
-12.  Now we need to add the corresponding RandomizerTag to the cube. 
+13.  Now we need to add the corresponding RandomizerTag to the cube. 
     * Select the `Cube` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `RobotArmObjectPositionRandomizerTag` in the search bar that appears, until the `RobotArmObjectPositionRandomizerTag` script is found, with a **#** icon to the left. Click on the script. 
     * In the UI for this new component, enable the `Must Be Reachable` property. 
 
@@ -255,7 +261,7 @@ If you press **▷** (play) now, you should see the `Cube` and `Goal` objects mo
 
 Now we will add another Randomizer to introduce some variation into the Scene's lighting. 
 
-13.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `LightRandomizer`. 
+14.  Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, on the `Pose Estimation Scenario` component, click on `Add Randomizer` and start typing `LightRandomizer`. 
     * For the range parameter of `Light Intensity Parameter`, set `Min` to `0.9` and `Max` to `1.1`. 
     * For the range parameter of `Rotation X`, set `Min` to `40` and `Max` to `80`. 
     * For the range parameter of `Rotation Y`, set `Min` to `-180` and `Max` to `180`. 
@@ -267,7 +273,7 @@ The Randomizer should now look like this:
 <img src="Images/2_light_randomizer_settings.png" height=450/>
 </p>
 
-14.  Now we need to add a RandomizerTag to the light. Select the `Directional Light` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `LightRandomizerTag` in the search bar that appears, until the `LightRandomizerTag` script is found, with a **#** icon to the left. Click the script.
+15.  Now we need to add a RandomizerTag to the light. Select the `Directional Light` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `LightRandomizerTag` in the search bar that appears, until the `LightRandomizerTag` script is found, with a **#** icon to the left. Click the script.
 
 To view this script, you can right click on the three dots at the right end and select `Edit Script`. 
 This Randomizer is a bit different from the previous ones. The line `[RequireComponent(typeof(Light))]` makes it so that you can only add the `LightRandomizerTag` component to an object that already has a **Light** component attached. This way, the Randomizers that query for this tag can be confident that the found objects have a **Light** component.
