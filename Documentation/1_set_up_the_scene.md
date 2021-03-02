@@ -23,7 +23,7 @@ To follow this tutorial you need to **clone** this repository even if you want t
 
 1. Open a terminal and navigate to the folder where you want to host the repository. 
 ```bash
-git clone --recurse-submodules https://github.com/Unity-Technologies/Object-Pose-Estimation.git
+git clone --recurse-submodules https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation.git
 ```
 
 2. [Install Unity `2020.2.*`.](install_unity.md)
@@ -125,7 +125,7 @@ As seen above, the new Scene already contains a camera (`Main Camera`) and a lig
 #### Adding Tutorial Files
 Now it is time to add some more objects to our scene. Before doing so, we need to import some folders containing the required assets. 
 
-4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
+4. Download [TutorialAssets.zip](https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation/releases/download/v0.0.1/TutorialAssets.zip), and unzip it. It should contain the following subfolders: `Materials`, `Prefabs`, `RosMessages`, `Scripts`, `URDFs`.
 
 5. Drag and Drop the `TutorialAssets` folder from your operating system's file explorer onto the `Assets` folder in the _**Project**_ tab of the editor. 
 

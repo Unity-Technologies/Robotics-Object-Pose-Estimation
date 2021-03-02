@@ -26,7 +26,7 @@ If you have correctly followed parts 1 and 2, whether or not you choose to use t
 
 >Note: This project uses Git Submodules to grab the ROS package dependencies for the [`universal_robot`](https://github.com/ros-industrial/universal_robot), [`moveit_msgs`](https://github.com/ros-planning/moveit_msgs), [`ros_tcp_endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint), and the [`robotiq`](https://github.com/JStech/robotiq/tree/noetic-mods)) folders. If you cloned the project and forgot to use `--recurse-submodules`, or if any submodule in this directory doesn't have content (e.g. moveit_msgs or ros_tcp_endpoint), you can run the following command to grab the Git submodules. 
 > ```bash
-> cd /PATH/TO/Object-Pose-Estimation &&
+> cd /PATH/TO/Robotics-Object-Pose-Estimation &&
 > git submodule update --init --recursive 
 > ```
 
@@ -38,7 +38,7 @@ Here you have two options for the model:
 
 #### Option A: Use Our Pre-trained Model
 
-1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
+1. To save time, you may use the model we have trained. Download this [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) file, which contains the pre-trained model weights.
 
 #### Option B: Use Your Own Model
 
@@ -62,7 +62,7 @@ Building this Docker container will install the necessary packages for this tuto
 <img src="Images/4_docker_daemon.png" height=500/>
 </p>
 
-2. In the terminal, ensure the current location is at the root of the `Object-Pose-Estimation` directory. Build the provided ROS Docker image as follows:
+2. In the terminal, ensure the current location is at the root of the `Robotics-Object-Pose-Estimation` directory. Build the provided ROS Docker image as follows:
 
 ```bash
 docker build -t unity-robotics:pose-estimation -f docker/Dockerfile .
@@ -89,7 +89,7 @@ source devel/setup.bash
 
 The ROS workspace is now ready to accept commands!
 
->Note: The Docker-related files (Dockerfile, bash scripts for setup) are located in `Object-Pose-Estimation/docker`. 
+>Note: The Docker-related files (Dockerfile, bash scripts for setup) are located in `Robotics-Object-Pose-Estimation/docker`. 
 
 ---
 

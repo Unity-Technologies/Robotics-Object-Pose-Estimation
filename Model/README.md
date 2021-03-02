@@ -12,7 +12,7 @@ This model is a modified implementation of [Domain Randomization for Transferrin
 We trained this model on sythetic data collected in Unity. To learn how to collect this data and train the model yourself, see our [data collection and training tutorial](../Documentation/quick_demo_train.md).
 
 ## Pre-Trained Model
-We've provided a pre-trained model, which can be downloaded [here](https://github.com/Unity-Technologies/Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar).
+We've provided a pre-trained model, which can be downloaded [here](https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar).
 
 ## Setup
  * [For running on docker](documentation/running_on_docker.md#docker-requirements)

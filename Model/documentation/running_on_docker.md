@@ -21,7 +21,7 @@ Before creating the Docker image, you need to be sure your Docker settings are c
 
 The first step is to build the Docker image.
 
-* **Action**: Open a new terminal and navigate to the `Object-Pose-Estimation/Model` folder. Then run the command to build your docker image, and name it `pose_estimation`:
+* **Action**: Open a new terminal and navigate to the `Robotics-Object-Pose-Estimation/Model` folder. Then run the command to build your docker image, and name it `pose_estimation`:
 ```bash 
 docker build -t pose_estimation .
 ```
