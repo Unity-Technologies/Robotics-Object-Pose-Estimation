@@ -45,7 +45,7 @@ However, we used different metrics to _evaluate_ the performance of the model.
 |Translation          |  0.012 (12% of cube's size) |  0.01 (10% of cube's size) |
 |Orientation (radian) |  0.06                       |  0.05                      |   
 
-> Note: Data for the above experiment was collected in Unity [2020.2.1f1](unityhub://2020.2.1f1/270dd8c3da1c). 
+> Note: Data for the above experiment was collected in Unity 2020.2.1f1. 
 
 ## Unit Testing
 
