@@ -29,7 +29,7 @@ We have chosen a training dataset of 30,000 images and a validation dataset of 3
 
 1. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, make sure `Automatic Iteration` is enabled. When this flag is enabled, our Scenario automatically proceeds through Iterations, triggering the `OnIterationStart()` method of all Randomizers on each Iteration. When this flag is disabled, the Iterations would have to be triggered manually. 
 
-2. In the ***Inspector*** view of  `Pose Estimation Scenario`, set the `Total Iterations` field under `Constants` to 30000.
+2. In the ***Inspector*** view of  `Pose Estimation Scenario`, set the `Total Frames` field under `Constants` to 30000.
 
 3. Press play and wait until the simulation is done. It should take a bit of time (~10 min).
 
@@ -52,7 +52,7 @@ You should then see something similar to this:
 
 Now we need to collect the validation dataset. 
 
-8. Back in Unity Editor, Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Pose Estimation Scenario`, set the `Total Iterations` field under `Constants` to 3000.
+8. Back in Unity Editor, Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, in `Pose Estimation Scenario`, set the `Total Frames` field under `Constants` to 3000.
 
 9. Press play and wait until the simulation is done. Once the simulation finishes, follow the same steps as before to navigate to the output folder.
 

@@ -108,7 +108,7 @@ To start randomizing your simulation, you will first need to add a **Scenario** 
 
 2. Select the `Simulation Scenario` GameObject and in the _**Inspector**_ tab, click on the _**Add Component**_ button. Start typing `Pose Estimation Scenario` in the search bar that appears, until the `Pose Estimation Scenario` script is found, with a **#** icon to the left. Click on the script. 
    
-3. Still in the _**Inspector**_ tab of the `Simulation Scenario` GameObject, enable the `Automatic Iteration` flag. 
+3. Still in the _**Inspector**_ tab of the `Simulation Scenario` GameObject, ensure the `Automatic Iteration` flag is enabled. 
 
 <p align="center">
 <img src="Images/2_scenario_auto.png" height=500/>
