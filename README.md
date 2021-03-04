@@ -77,5 +77,8 @@ Robotics team at [unity-robotics@unity3d.com](mailto:unity-robotics@unity3d.com)
 For bugs or other issues, please file a GitHub issue and the Robotics team will 
 investigate the issue as soon as possible.
 
+## More from Unity Robotics
+Visit the [Robotics Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub) for more tutorials, tools, and information on robotics simulation in Unity!
+
 ## License
 [Apache License 2.0](LICENSE)
