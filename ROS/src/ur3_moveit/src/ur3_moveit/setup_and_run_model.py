@@ -119,12 +119,17 @@ def get_transform():
     )
     return transform
 
-def run_model_main(image_file_png, model_file_name):
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    checkpoint = torch.load(model_file_name, map_location=device)
+global model
+model = None
 
-    model = PoseEstimationNetwork(is_symetric=False)
-    model.load_state_dict(checkpoint["model"])
+def run_model_main(image_file_png, model_file_name):
+    global model
+
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    if model is None:
+        checkpoint = torch.load(model_file_name, map_location=device)
+        model = PoseEstimationNetwork(is_symetric=False)
+        model.load_state_dict(checkpoint["model"])
 
     image = pre_process_image(image_file_png, device)
     output_translation, output_orientation = model(torch.stack(image).reshape(-1, 3, 224, 224))
