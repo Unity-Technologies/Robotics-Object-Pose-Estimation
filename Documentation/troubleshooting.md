@@ -16,10 +16,11 @@
 
 ### Package Installation
 - If you are receiving a `[Package Manager Window] Unable to add package ... xcrun: error: invalid developer path...`, you may need to install the [Command Line Tools](https://developer.apple.com/library/archive/technotes/tn2339/_index.html) package for macOS via `xcode-select --install`.
+- If receiving `[Package Manager] Done resolving packages in ... seconds ... An error occurred while resolving packages: Project has invalid dependencies: ... Error when executing git command. fatal: update_ref failed for ref 'HEAD': cannot update ref 'refs/heads/master'` or similar git-related Package Manger errors, please note that this is a known issue that is being tracked on the [Issue Tracker](https://issuetracker.unity3d.com/issues/package-resolution-error-when-using-a-git-dependency-referencing-an-annotated-tag-in-its-git-url). The current workaround is to use a lightweight tag for the git URLs, i.e. `https://github.com/...#v0.2.0-light`. This workaround is reflected in the current version of the tutorial.
   
 ### Assets, Materials
 - Upon import, the cube and floor materials may appear to be bright pink (i.e. missing texture).
-  - Cube: Go to `Assets/TutorialAssets/Materials`. Select the `AlphabetCubeMaterial`. There is a section called `Surface Inputs`. If the Base Map is not assigned, select the circle next to this field. Click on it and start typing `NonsymmetricCubeTexture` and select it when it appears. Apply this updated `AlphabetCubeMaterial` to the Cube. Your Inspector view should look like the following:
+  - Cube: Go to `Assets/TutorialAssets/Materials`. Select the `AlphabetCubeMaterial`. There is a section called `Surface Inputs`. If the Base Map is not assigned, select the circle next to this field. Click on it and start typing `NonsymmetricCubeTexture` and select it when it appears. Apply this updated `AlphabetCubeMaterial` to the Cube. Your Inspector view of the Material should look like the following:
   ![](Images/1_alphabet_material.png)
   - Floor: Assign the `NavyFloor` material to the Floor object.
 - If all of the project materials appear to have missing textures, ensure you have created the project using the Universal Render Pipeline.
