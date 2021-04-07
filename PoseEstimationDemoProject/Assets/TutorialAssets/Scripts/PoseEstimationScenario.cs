@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using UnityEngine.Perception.Randomization.Scenarios;
 
 [Serializable]
@@ -7,25 +8,32 @@ public class PoseEstimationScenarioConstants : ScenarioConstants
     public int totalFrames = 1000;
 }
 
-public class PoseEstimationScenario : Scenario<PoseEstimationScenarioConstants>
+public class PoseEstimationScenario : PerceptionScenario<PoseEstimationScenarioConstants>
 {
     public bool automaticIteration = true;
     
-    bool shouldIterate = false; 
+    bool m_ShouldIterate;
 
     public void Move()
     {
-        shouldIterate = true;
+        m_ShouldIterate = true;
     }
 
     protected override void IncrementIteration()
     {
         base.IncrementIteration();
-        shouldIterate = false;
+        m_ShouldIterate = false;
     }
 
-    public override bool isIterationComplete => automaticIteration || shouldIterate;
-    public override bool isScenarioComplete => currentIteration >= constants.totalFrames;
+    protected override bool isIterationComplete => m_ShouldIterate || automaticIteration && currentIterationFrame >= 1;
+    
+    protected override bool isScenarioComplete => currentIteration >= constants.totalFrames;
+
+    protected override void OnComplete()
+    {
+        if (automaticIteration)
+            base.OnComplete();
+    }
 }
 
 

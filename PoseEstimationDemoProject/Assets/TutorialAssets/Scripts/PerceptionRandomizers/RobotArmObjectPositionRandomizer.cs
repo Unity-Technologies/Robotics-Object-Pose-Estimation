@@ -38,8 +38,7 @@ public class RobotArmObjectPositionRandomizer : Randomizer
 
     private SurfaceObjectPlacer placer;
 
-
-    protected override void OnCreate()
+    protected override void OnScenarioStart()
     {
         ReachabilityConstraint maxReach = CreateReachabilityConstraint(robotBase.transform.position, maxRobotReachability, ReachabilityConstraint.LimitType.max);
         ReachabilityConstraint minReach = CreateReachabilityConstraint(robotBase.transform.position, minRobotReachability, ReachabilityConstraint.LimitType.min);
