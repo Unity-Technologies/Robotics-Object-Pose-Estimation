@@ -54,6 +54,9 @@
 
 ## Part 4: Pick-and-Place
 
+### Running the Pick-and-Place task
+- `Error processing request: invalid load key...` This has most likely occurred due to the downloaded model's `.tar` file being corrupted, e.g. caused by an unstable connection, or otherwise interrupted download process. Please try redownloading the [UR3_single_cube_model.tar](https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation/releases/download/v0.0.1/UR3_single_cube_model.tar) file and try the process again.
+
 ### Unity Scene
 - The buttons might appear oversized compared to the rest of the objects in the scene view, this is a normal behavior. If you zoom out from the table you should see something similar to the following: 
 <p align="center">
