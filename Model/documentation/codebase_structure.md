@@ -8,10 +8,10 @@ The pose estimation project is organized as following.
 
 PoseEstimationModel:
 *    [environment-gpu.yml](../environment-gpu.yml):
-        If the computer your are runnning the project from **has a gpu support**, this file sets the dependencices of the project and the different packages to install. It is meant to be used when you create your conda environment. 
+        If the computer you are runnning the project from **has a gpu support**, this file sets the dependencies of the project and the different packages to install. It is meant to be used when you create your conda environment. 
 
 *    [environment.yml](../environment.yml):
-        If you the computer your are runnning the project from **does not have a gpu support**, this file sets the dependencices of the project and the different packages to install. It is meant to be used when you create your conda environment. 
+        If the computer you are runnning the project from **does not have a gpu support**, this file sets the dependencies of the project and the different packages to install. It is meant to be used when you create your conda environment. 
 
 *    [setup.py](../setup.py):
         This file is to create a package as your project. 
