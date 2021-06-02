@@ -334,6 +334,8 @@
   </transmission>
   <disable_collision link1="left_inner_knuckle" link2="left_outer_knuckle"></disable_collision>
   <disable_collision link1="right_inner_knuckle" link2="right_outer_knuckle"></disable_collision>
+  <disable_collision link1="left_inner_knuckle" link2="left_inner_finger"></disable_collision>
+  <disable_collision link1="right_inner_knuckle" link2="right_inner_finger"></disable_collision>
   <disable_collision link1="left_inner_knuckle" link2="robotiq_arg2f_base_link"></disable_collision>
   <disable_collision link1="right_inner_knuckle" link2="robotiq_arg2f_base_link"></disable_collision>
   <!-- measured from model -->
