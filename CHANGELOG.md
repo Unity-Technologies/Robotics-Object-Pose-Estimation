@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## Unreleased
 
 ### Upgrade Notes
+Add collision ignorance to the gripper inner knuckles and switch the PGS solver to the TGS solver
 
 ### Known Issues
 
@@ -19,3 +20,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Removed
 
 ### Fixed
+Update key fetching from Ubuntu keyserver when building the ROS docker image
