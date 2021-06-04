@@ -132,9 +132,9 @@ public class TrajectoryPlanner : MonoBehaviour
         bool isRotationFinished = true;
         var rotationSpeed = 180f;
 
-        for (int i = 1; i < numRobotJoints + 1; i++)
+        for (int i = 0; i < numRobotJoints; i++)
         {
-            var tempXDrive = articulationChain[i].xDrive;
+            var tempXDrive = jointArticulationBodies[i].xDrive;
             float currentRotation = tempXDrive.target;
             
             float rotationChange = rotationSpeed * Time.fixedDeltaTime;
@@ -149,7 +149,7 @@ public class TrajectoryPlanner : MonoBehaviour
             // the new xDrive target is the currentRotation summed with the desired change
             float rotationGoal = currentRotation + rotationChange;
             tempXDrive.target = rotationGoal;
-            articulationChain[i].xDrive = tempXDrive;
+            jointArticulationBodies[i].xDrive = tempXDrive;
         }
         return isRotationFinished;
     }
