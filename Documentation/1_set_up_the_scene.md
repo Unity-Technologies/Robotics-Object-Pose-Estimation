@@ -41,7 +41,7 @@ When you first run Unity, you will be asked to open an existing project, or crea
 2. Go to **Edit > Project Settings** to open the `Project Settings` window. Change the **Physics > Solver Type** to `Temporal Gauss Seidel`.
 
 <p align="center">
-<img src="Images/1_set_solver_type.png" align="center" width=500/>
+<img src="Images/1_set_solver_type.png" align="center" width=800/>
 </p>
 
 ### <a name="step-2">Download the Perception, the URDF and the TCP connector Packages</a>
