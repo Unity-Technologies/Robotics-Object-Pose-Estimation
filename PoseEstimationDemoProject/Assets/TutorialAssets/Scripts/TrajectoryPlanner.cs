@@ -24,7 +24,7 @@ public class TrajectoryPlanner : MonoBehaviour
     private readonly Vector3 pickPoseOffset = new Vector3(0, 0.255f, 0);
     private readonly Vector3 placePoseOffset = new Vector3(0, 0.275f, 0);
     // Multipliers correspond to the URDF mimic tag for each joint
-    private float[] multipliers = new float[] { 1f, 1f, -1f, -1f, 1f, -1f };
+    private float[] multipliers = new float[] { -1f, -1f, -1f, 1f, 1f, 1f };
     // Orientation is hardcoded for this example so the gripper is always directly above the placement object
     private readonly Quaternion pickOrientation = new Quaternion(-0.5f,-0.5f,0.5f,-0.5f);
 
