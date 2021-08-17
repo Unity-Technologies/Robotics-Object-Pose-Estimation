@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## Unreleased
 
+Add the [Close Stale Issues](https://github.com/marketplace/actions/close-stale-issues) action
+
 ### Upgrade Notes
 Add collision ignorance to the gripper inner knuckles and switch the PGS solver to the TGS solver
 
