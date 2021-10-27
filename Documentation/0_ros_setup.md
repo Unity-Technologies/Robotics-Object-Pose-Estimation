@@ -15,16 +15,16 @@ sudo pip3 install rospkg numpy jsonpickle scipy easydict torch==1.7.1+cu101 torc
 ```
 
 > Note: If you encounter errors installing Pytorch via the above `pip3` command, try the following instead:
-> ```bash 
+> ```bash
 > sudo pip3 install rospkg numpy jsonpickle scipy easydict torch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 > ```
 
 
 Most of the ROS setup has been provided via the `ur3_moveit` package. This section will describe the provided files.
 
-4. If you have not already built and sourced the ROS workspace since importing the new ROS packages, navigate to your ROS workplace, and run: 
+4. If you have not already built and sourced the ROS workspace since importing the new ROS packages, navigate to your ROS workplace, and run:
 
-```bash 
+```bash
 catkin_make -DCATKIN_WHITELIST_PACKAGES="moveit_msgs;ros_tcp_endpoint;ur3_moveit;robotiq_2f_140_gripper_visualization;ur_description;ur_gazebo"
 source devel/setup.bash
 ```
@@ -33,7 +33,7 @@ source devel/setup.bash
 
 Ensure there are no unexpected errors.
 
-The ROS parameters will need to be set to your configuration in order to allow the server endpoint to fetch values for the TCP connection. 
+The ROS parameters will need to be set to your configuration in order to allow the server endpoint to fetch values for the TCP connection.
 
 5. Navigate to your ROS workspace (e.g. `~/catkin_ws`). Assign the ROS IP in the `params.yaml` file as follows:
 

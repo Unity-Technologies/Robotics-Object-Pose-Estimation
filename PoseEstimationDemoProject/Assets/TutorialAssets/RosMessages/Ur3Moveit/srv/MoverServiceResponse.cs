@@ -25,9 +25,9 @@ namespace RosMessageTypes.Ur3Moveit
         public override List<byte[]> SerializationStatements()
         {
             var listOfSerializations = new List<byte[]>();
-            
+
             listOfSerializations.Add(BitConverter.GetBytes(trajectories.Length));
-            foreach(var entry in trajectories)
+            foreach (var entry in trajectories)
                 listOfSerializations.Add(entry.Serialize());
 
             return listOfSerializations;
@@ -35,11 +35,11 @@ namespace RosMessageTypes.Ur3Moveit
 
         public override int Deserialize(byte[] data, int offset)
         {
-            
+
             var trajectoriesArrayLength = DeserializeLength(data, offset);
             offset += 4;
-            this.trajectories= new Moveit.RobotTrajectory[trajectoriesArrayLength];
-            for(var i = 0; i < trajectoriesArrayLength; i++)
+            this.trajectories = new Moveit.RobotTrajectory[trajectoriesArrayLength];
+            for (var i = 0; i < trajectoriesArrayLength; i++)
             {
                 this.trajectories[i] = new Moveit.RobotTrajectory();
                 offset = this.trajectories[i].Deserialize(data, offset);

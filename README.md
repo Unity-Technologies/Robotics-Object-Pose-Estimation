@@ -1,4 +1,4 @@
-# Object Pose Estimation Demo 
+# Object Pose Estimation Demo
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -15,7 +15,7 @@ This tutorial will go through the steps necessary to perform pose estimation wit
 - [Part 2: Setting up the scene for data collection](#link-part-2)
 - [Part 3: Data Collection and Model Training](#link-part-3)
 - [Part 4: Pick-and-Place](#link-part-4)
-  
+
 ---
 
 ### <a name="link-part-1">[Part 1: Create Unity Scene with Imported URDF](Documentation/1_set_up_the_scene.md)</a>
@@ -23,21 +23,21 @@ This tutorial will go through the steps necessary to perform pose estimation wit
 <img src="Documentation/Images/0_scene.png" width=400 />
 
 
-This part includes downloading and installing the Unity Editor, setting up a basic Unity scene, and importing a robot. We will import the [UR3 robot arm](https://www.universal-robots.com/products/ur3-robot) using the [URDF Importer](https://github.com/Unity-Technologies/URDF-Importer) package. 
+This part includes downloading and installing the Unity Editor, setting up a basic Unity scene, and importing a robot. We will import the [UR3 robot arm](https://www.universal-robots.com/products/ur3-robot) using the [URDF Importer](https://github.com/Unity-Technologies/URDF-Importer) package.
 
 ---
 
-### <a name="link-part-2">[Part 2: Setup the Scene for Data Collection](Documentation/2_set_up_the_data_collection_scene.md)</a> 
+### <a name="link-part-2">[Part 2: Setup the Scene for Data Collection](Documentation/2_set_up_the_data_collection_scene.md)</a>
 
 <img src="Documentation/Images/0_data_collection_environment.png" width=400/>
 
-This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception). You will learn how to use Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data. 
+This part focuses on setting up the scene for data collection using the Unity Computer Vision [Perception Package](https://github.com/Unity-Technologies/com.unity.perception). You will learn how to use Perception Package [Randomizers](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/Randomization/Index.md) to randomize aspects of the scene in order to create variety in the training data.
 
 If you would like to learn more about Randomizers, and apply domain randomization to this scene more thoroughly, check out our further exercises for the reader [here](Documentation/5_more_randomizers.md).
 
 ---
 
-### <a name="link-part-3">[Part 3: Data Collection and Model Training](Documentation/3_data_collection_model_training.md)</a> 
+### <a name="link-part-3">[Part 3: Data Collection and Model Training](Documentation/3_data_collection_model_training.md)</a>
 
 <img src="Documentation/Images/0_json_environment.png" width=400/>
 
@@ -56,7 +56,7 @@ To measure the success of grasping in simulation using our pre-trained model for
 
 ---
 
-### <a name="link-part-4">[Part 4: Pick-and-Place](Documentation/4_pick_and_place.md)</a> 
+### <a name="link-part-4">[Part 4: Pick-and-Place](Documentation/4_pick_and_place.md)</a>
 
 <img src="Documentation/Gifs/0_demo.gif" width=400/>
 
@@ -64,7 +64,7 @@ To measure the success of grasping in simulation using our pre-trained model for
 This part includes the preparation and setup necessary to run a pick-and-place task using MoveIt. Here, the cube pose is predicted by the trained deep learning model. Steps covered include:
 * Creating and invoking a motion planning service in ROS
 * Sending captured RGB images from our scene to the ROS Pose Estimation node for inference
-* Using a Python script to run inference on our trained deep learning model 
+* Using a Python script to run inference on our trained deep learning model
 * Moving Unity Articulation Bodies based on a calculated trajectory
 * Controlling a gripping tool to successfully grasp and drop an object.
 
@@ -75,7 +75,7 @@ For questions or discussions about Unity Robotics package installations or how t
 
 For feature requests, bugs, or other issues, please file a [GitHub issue](https://github.com/Unity-Technologies/Robotics-Object-Pose-Estimation/issues) using the provided templates and the Robotics team will investigate as soon as possible.
 
-For any other questions or feedback, connect directly with the 
+For any other questions or feedback, connect directly with the
 Robotics team at [unity-robotics@unity3d.com](mailto:unity-robotics@unity3d.com).
 
 ## More from Unity Robotics
