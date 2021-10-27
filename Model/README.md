@@ -1,8 +1,8 @@
 Object Pose Estimation Model
 =====================
-This section contains code for training and evaluating a deep neural network to predict the pose of a single object from RGB images. We provide support for running both locally and with Docker.  
+This section contains code for training and evaluating a deep neural network to predict the pose of a single object from RGB images. We provide support for running both locally and with Docker.
 
-This model is a modified implementation of [Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/pdf/1703.06907.pdf), by Tobin et. al. It is based on the classic VGG-16 backbone architecture, and initialized with weights pre-trained on the ImageNet dataset. The head of the network is replaced with a 3D position prediction head that outputs (x, y, z), and an orientation predicton head that outputs a quaternion (q<sub>x</sub>, q<sub>y</sub>, q<sub>z</sub>, q<sub>w</sub>). 
+This model is a modified implementation of [Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World](https://arxiv.org/pdf/1703.06907.pdf), by Tobin et. al. It is based on the classic VGG-16 backbone architecture, and initialized with weights pre-trained on the ImageNet dataset. The head of the network is replaced with a 3D position prediction head that outputs (x, y, z), and an orientation predicton head that outputs a quaternion (q<sub>x</sub>, q<sub>y</sub>, q<sub>z</sub>, q<sub>w</sub>).
 
 <p align='center'>
   <img src='documentation/docs/network.png' height=400/>
@@ -23,19 +23,19 @@ We've provided a pre-trained model, which can be downloaded [here](https://githu
 This model supports a `train` and an `evaluate` command. Both of these have many arguments, which you can examine in `cli.py`. They will default to the values in `config.yaml` for convenience, but can be overridden via the command line.
 
 The most important `train` arguments to be aware of are:
-* `--data_root`: Path to the directory containing your data folders. These directory should include `UR3_single_cube_training` and `UR3_single_cube_validation`, containing the training and validation data, respectively. 
+* `--data_root`: Path to the directory containing your data folders. These directory should include `UR3_single_cube_training` and `UR3_single_cube_validation`, containing the training and validation data, respectively.
 * `--log-dir-system`: Path to directory where you'd like to save Tensorboard log files and model checkpoint files.
 
 The most important `evaluate` arguments to be aware of are:
-* `--load-dir-checkpoint`: Path to model to be evaluated. 
-* `--data_root`: Path to the directory containing your data folders. These directory should include `UR3_single_cube_training` and `UR3_single_cube_validation`, containing the training and validation data, respectively. 
+* `--load-dir-checkpoint`: Path to model to be evaluated.
+* `--data_root`: Path to the directory containing your data folders. These directory should include `UR3_single_cube_training` and `UR3_single_cube_validation`, containing the training and validation data, respectively.
 
 
 ## Performance
 
 Below is a description of the model's performance on predicting the pose of a cube. For the loss, we used the L2 norm for the position and orientation in each batch.
 
-However, we used different metrics to _evaluate_ the performance of the model. 
+However, we used different metrics to _evaluate_ the performance of the model.
 * To evaluate translation predictions, we measured the [average L2 norm over the dataset](pose_estimation/evaluation_metrics/translation_average_mean_square_error.py).
 * To evaluate the orientation predictions, we used the angle between the orientation of the prediction and the orientation of the target, averaged over the dataset (implementation [here](pose_estimation/evaluation_metrics/orientation_average_quaternion_error.py)).
 
@@ -43,9 +43,9 @@ However, we used different metrics to _evaluate_ the performance of the model.
 |                     | Training Error              | Validation Error           |
 |:-------------------:|:---------------------------:|:--------------------------:|
 |Translation          |  0.012 (12% of cube's size) |  0.01 (10% of cube's size) |
-|Orientation (radian) |  0.06                       |  0.05                      |   
+|Orientation (radian) |  0.06                       |  0.05                      |
 
-> Note: Data for the above experiment was collected in Unity 2020.2.1f1. 
+> Note: Data for the above experiment was collected in Unity 2020.2.1f1.
 
 ## Unit Testing
 

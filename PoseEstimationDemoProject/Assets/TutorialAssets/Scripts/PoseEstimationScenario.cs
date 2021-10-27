@@ -11,7 +11,7 @@ public class PoseEstimationScenarioConstants : ScenarioConstants
 public class PoseEstimationScenario : PerceptionScenario<PoseEstimationScenarioConstants>
 {
     public bool automaticIteration = true;
-    
+
     bool m_ShouldIterate;
 
     public void Move()
@@ -26,7 +26,7 @@ public class PoseEstimationScenario : PerceptionScenario<PoseEstimationScenarioC
     }
 
     protected override bool isIterationComplete => m_ShouldIterate || automaticIteration && currentIterationFrame >= 1;
-    
+
     protected override bool isScenarioComplete => currentIteration >= constants.totalFrames;
 
     protected override void OnComplete()

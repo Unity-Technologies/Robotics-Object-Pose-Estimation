@@ -26,7 +26,7 @@ public class TrajectoryPlanner : MonoBehaviour
     // Multipliers correspond to the URDF mimic tag for each joint
     private float[] multipliers = new float[] { -1f, -1f, -1f, 1f, 1f, 1f };
     // Orientation is hardcoded for this example so the gripper is always directly above the placement object
-    private readonly Quaternion pickOrientation = new Quaternion(-0.5f,-0.5f,0.5f,-0.5f);
+    private readonly Quaternion pickOrientation = new Quaternion(-0.5f, -0.5f, 0.5f, -0.5f);
 
     // Variables required for ROS communication
     public string rosServiceName = "ur3_moveit";
@@ -84,14 +84,16 @@ public class TrajectoryPlanner : MonoBehaviour
     /// <summary>
     ///     Button callback for setting the robot to default position
     /// </summary>
-    public void Initialize(){
+    public void Initialize()
+    {
         StartCoroutine(MoveToInitialPosition());
     }
 
     /// <summary>
     ///     Button callback for the Cube Randomization
     /// </summary>
-    public void RandomizeCube(){
+    public void RandomizeCube()
+    {
         scenario.Move();
         ActualPos.text = target.transform.position.ToString();
         ActualRot.text = target.transform.eulerAngles.ToString();
@@ -100,7 +102,8 @@ public class TrajectoryPlanner : MonoBehaviour
     /// <summary>
     ///     Button callback for the Pose Estimation
     /// </summary>
-    public void PoseEstimation(){
+    public void PoseEstimation()
+    {
         Debug.Log("Capturing screenshot...");
 
         InitializeButton.interactable = false;
@@ -136,16 +139,16 @@ public class TrajectoryPlanner : MonoBehaviour
         {
             var tempXDrive = jointArticulationBodies[i].xDrive;
             float currentRotation = tempXDrive.target;
-            
+
             float rotationChange = rotationSpeed * Time.fixedDeltaTime;
-            
+
             if (currentRotation > 0f) rotationChange *= -1;
-            
+
             if (Mathf.Abs(currentRotation) < rotationChange)
                 rotationChange = 0;
             else
                 isRotationFinished = false;
-            
+
             // the new xDrive target is the currentRotation summed with the desired change
             float rotationGoal = currentRotation + rotationChange;
             tempXDrive.target = rotationGoal;
@@ -170,10 +173,10 @@ public class TrajectoryPlanner : MonoBehaviour
         RosMessageTypes.Sensor.Image rosImage = new RosMessageTypes.Sensor.Image(new RosMessageTypes.Std.Header(), imageWidth, imageHeight, "RGBA", isBigEndian, step, imageData);
         PoseEstimationServiceRequest poseServiceRequest = new PoseEstimationServiceRequest(rosImage);
         ros.SendServiceMessage<PoseEstimationServiceResponse>("pose_estimation_srv", poseServiceRequest, PoseEstimationCallback);
-	}
+    }
 
     void PoseEstimationCallback(PoseEstimationServiceResponse response)
-	{
+    {
         if (response != null)
         {
             // The position output by the model is the position of the cube relative to the camera so we need to extract its global position 
@@ -185,7 +188,8 @@ public class TrajectoryPlanner : MonoBehaviour
             EstimatedPos.text = estimatedPosition.ToString();
             EstimatedRot.text = estimatedRotation.eulerAngles.ToString();
         }
-        else {
+        else
+        {
             InitializeButton.interactable = true;
             RandomizeButton.interactable = true;
         }
@@ -218,7 +222,7 @@ public class TrajectoryPlanner : MonoBehaviour
     UR3MoveitJoints CurrentJointConfig()
     {
         UR3MoveitJoints joints = new UR3MoveitJoints();
-        
+
         joints.joint_00 = jointArticulationBodies[0].xDrive.target;
         joints.joint_01 = jointArticulationBodies[1].xDrive.target;
         joints.joint_02 = jointArticulationBodies[2].xDrive.target;
@@ -286,18 +290,18 @@ public class TrajectoryPlanner : MonoBehaviour
         if (response.trajectories != null)
         {
             // For every trajectory plan returned
-            for (int poseIndex  = 0 ; poseIndex < response.trajectories.Length; poseIndex++)
+            for (int poseIndex = 0; poseIndex < response.trajectories.Length; poseIndex++)
             {
                 // For every robot pose in trajectory plan
-                for (int jointConfigIndex  = 0 ; jointConfigIndex < response.trajectories[poseIndex].joint_trajectory.points.Length; jointConfigIndex++)
+                for (int jointConfigIndex = 0; jointConfigIndex < response.trajectories[poseIndex].joint_trajectory.points.Length; jointConfigIndex++)
                 {
                     var jointPositions = response.trajectories[poseIndex].joint_trajectory.points[jointConfigIndex].positions;
-                    float[] result = jointPositions.Select(r=> (float)r * Mathf.Rad2Deg).ToArray();
-                    
+                    float[] result = jointPositions.Select(r => (float)r * Mathf.Rad2Deg).ToArray();
+
                     // Set the joint values for every joint
                     for (int joint = 0; joint < jointArticulationBodies.Length; joint++)
                     {
-                        var joint1XDrive  = jointArticulationBodies[joint].xDrive;
+                        var joint1XDrive = jointArticulationBodies[joint].xDrive;
                         joint1XDrive.target = result[joint];
                         jointArticulationBodies[joint].xDrive = joint1XDrive;
                     }
@@ -306,11 +310,13 @@ public class TrajectoryPlanner : MonoBehaviour
                 }
 
                 // Close the gripper if completed executing the trajectory for the Grasp pose
-                if (poseIndex == (int)Poses.Grasp){
+                if (poseIndex == (int)Poses.Grasp)
+                {
                     StartCoroutine(IterateToGrip(true));
                     yield return new WaitForSeconds(jointAssignmentWait);
                 }
-                else if (poseIndex == (int)Poses.Place){
+                else if (poseIndex == (int)Poses.Place)
+                {
                     yield return new WaitForSeconds(poseAssignmentWait);
                     // Open the gripper to place the target cube
                     StartCoroutine(IterateToGrip(false));
@@ -338,16 +344,16 @@ public class TrajectoryPlanner : MonoBehaviour
 
         string arm_link = shoulder_link + "/upper_arm_link";
         jointArticulationBodies[1] = robot.transform.Find(arm_link).GetComponent<ArticulationBody>();
-        
+
         string elbow_link = arm_link + "/forearm_link";
         jointArticulationBodies[2] = robot.transform.Find(elbow_link).GetComponent<ArticulationBody>();
-        
+
         string forearm_link = elbow_link + "/wrist_1_link";
         jointArticulationBodies[3] = robot.transform.Find(forearm_link).GetComponent<ArticulationBody>();
-        
+
         string wrist_link = forearm_link + "/wrist_2_link";
         jointArticulationBodies[4] = robot.transform.Find(wrist_link).GetComponent<ArticulationBody>();
-        
+
         string hand_link = wrist_link + "/wrist_3_link";
         jointArticulationBodies[5] = robot.transform.Find(hand_link).GetComponent<ArticulationBody>();
 
@@ -369,12 +375,12 @@ public class TrajectoryPlanner : MonoBehaviour
     {
         // Get ROS connection static instance
         ros = ROSConnection.instance;
-        
+
         // Assign UI elements
         InitializeButton = GameObject.Find("ROSObjects/Canvas/ButtonPanel/DefaultButton").GetComponent<Button>();
         RandomizeButton = GameObject.Find("ROSObjects/Canvas/ButtonPanel/RandomButton").GetComponent<Button>();
         ServiceButton = GameObject.Find("ROSObjects/Canvas/ButtonPanel/ServiceButton").GetComponent<Button>();
-        
+
         ActualPos = GameObject.Find("ROSObjects/Canvas/PositionPanel/ActualPosField").GetComponent<Text>();
         ActualRot = GameObject.Find("ROSObjects/Canvas/PositionPanel/ActualRotField").GetComponent<Text>();
         EstimatedPos = GameObject.Find("ROSObjects/Canvas/PositionPanel/EstPosField").GetComponent<Text>();
