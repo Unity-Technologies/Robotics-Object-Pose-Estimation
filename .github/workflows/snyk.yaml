@@ -1,0 +1,24 @@
+name: Snyk Monitor
+
+on: 
+  pull_request:
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Snyk to check for vulnerabilities in ROS/src/ur3_moveit
+        uses: snyk/actions/python-3.8@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: monitor
+          args: --file=ROS/src/ur3_moveit/setup.py
+      - name: Run Snyk to check for vulnerabilities in Model/
+        uses: snyk/actions/python-3.8@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: monitor
+          args: --file=Model/setup.py
