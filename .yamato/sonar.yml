@@ -8,12 +8,12 @@ csharp:
         PROJECT_PATH: PoseEstimationDemoProject
         SONARQUBE_PROJECT_KEY: ai-robotics-object-pose-estimation-csharp
         SONARQUBE_PROJECT_BASE_DIR: /Users/bokken/build/output/Unity-Technologies/Robotics-Object-Pose-Estimation/PoseEstimationDemoProject
-        MSBUILD_SLN_PATH: ./Robotics-Object-Pose-Estimation/PoseEstimationDemoProject/PoseEstimationDemoProject.sln
+        MSBUILD_SLN_PATH: ./PoseEstimationDemoProject/PoseEstimationDemoProject.sln
         PROJECT_ROOT: /Users/bokken/build/output/Unity-Technologies/Robotics-Object-Pose-Estimation/
         UNITY_VERSION: 2020.2.6f1
     commands:
         - npm install upm-ci-utils@stable -g --registry https://artifactory.prd.it.unity3d.com/artifactory/api/npm/upm-npm
-        - unity-downloader-cli -u $UNITY_VERSION -c Editor
+        - unity-downloader-cli --wait -u $UNITY_VERSION -c Editor
         - brew install mono corretto
         - curl https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/5.2.1.31210/sonar-scanner-msbuild-5.2.1.31210-net46.zip -o sonar-scanner-msbuild-net46.zip -L
         - unzip sonar-scanner-msbuild-net46.zip -d ~/sonar-scanner-msbuild
