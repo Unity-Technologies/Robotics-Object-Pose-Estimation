@@ -23,7 +23,7 @@ csharp:
             cd $PROJECT_PATH
             for file in *.csproj; do sed -i.backup "s/^[[:blank:]]*<ReferenceOutputAssembly>false<\/ReferenceOutputAssembly>/<ReferenceOutputAssembly>true<\/ReferenceOutputAssembly>/g" $file; rm $file.backup; done
             cd $PROJECT_ROOT
-        - mono ~/sonar-scanner-msbuild/SonarScanner.MSBuild.exe begin /k:$SONARQUBE_PROJECT_KEY /d:sonar.host.url=$SONARQUBE_ENDPOINT_URL_PRD /d:sonar.login=$SONARQUBE_TOKEN_STG /d:sonar.projectBaseDir=$SONARQUBE_PROJECT_BASE_DIR
+        - mono ~/sonar-scanner-msbuild/SonarScanner.MSBuild.exe begin /k:$SONARQUBE_PROJECT_KEY /d:sonar.host.url=$SONARQUBE_ENDPOINT_URL_STG /d:sonar.login=$SONARQUBE_TOKEN_STG /d:sonar.projectBaseDir=$SONARQUBE_PROJECT_BASE_DIR
         - msbuild $MSBUILD_SLN_PATH
         - mono ~/sonar-scanner-msbuild/SonarScanner.MSBuild.exe end /d:sonar.login=$SONARQUBE_TOKEN_STG
     triggers:
