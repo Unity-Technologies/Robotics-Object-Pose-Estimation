@@ -15,6 +15,8 @@ Add collision ignorance to the gripper inner knuckles and switch the PGS solver 
 
 ### Added
 
+Added Sonarqube Scanner
+
 ### Changed
 
 ### Deprecated
