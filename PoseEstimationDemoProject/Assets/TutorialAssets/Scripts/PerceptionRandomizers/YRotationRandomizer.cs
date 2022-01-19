@@ -11,7 +11,7 @@ using UnityEngine.Perception.Randomization.Samplers;
 [AddRandomizerMenu("Perception/Y Rotation Randomizer")]
 public class YRotationRandomizer : Randomizer
 {
-    public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(0f, 360f)}; // in range (0, 1)
+    public FloatParameter rotationRange = new FloatParameter { value = new UniformSampler(0f, 360f) }; // in range (0, 1)
 
     protected override void OnIterationStart()
     {

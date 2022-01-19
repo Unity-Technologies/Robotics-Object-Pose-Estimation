@@ -2,7 +2,7 @@
 
 _**Unity Version**_: if you want to use the Unity project given by the repository, you need to use a version of Unity at least `2020.2.*`. The easiest way to install Unity is through Unity Hub.
 
-1. Navigate to [this](https://unity3d.com/get-unity/download) page to download Unity Hub 
+1. Navigate to [this](https://unity3d.com/get-unity/download) page to download Unity Hub
 2. Go to the Unity Hub and in the panel `install`. Then click on `Add` and select the latest release of `Unity 2020.2`.
 
 <p align="center">

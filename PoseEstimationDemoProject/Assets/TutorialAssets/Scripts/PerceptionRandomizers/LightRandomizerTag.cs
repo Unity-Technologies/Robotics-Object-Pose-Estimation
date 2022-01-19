@@ -7,5 +7,5 @@ using UnityEngine.Perception.Randomization.Randomizers;
 [RequireComponent(typeof(Light))]
 public class LightRandomizerTag : RandomizerTag
 {
-    
+
 }

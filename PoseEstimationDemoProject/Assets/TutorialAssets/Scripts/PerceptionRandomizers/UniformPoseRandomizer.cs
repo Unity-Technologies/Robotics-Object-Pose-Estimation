@@ -17,7 +17,7 @@ public class UniformPoseRandomizer : Randomizer
      */
 
     public float positionRange = 0.005f;
-    public float rotationRangeDegrees = 1.0f; 
+    public float rotationRangeDegrees = 1.0f;
 
     public FloatParameter random; //(-1, 1)
 
