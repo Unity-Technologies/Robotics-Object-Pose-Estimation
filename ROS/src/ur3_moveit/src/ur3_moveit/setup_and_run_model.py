@@ -130,6 +130,7 @@ def run_model_main(image_file_png, model_file_name):
         checkpoint = torch.load(model_file_name, map_location=device)
         model = PoseEstimationNetwork(is_symetric=False)
         model.load_state_dict(checkpoint["model"])
+        model.to(device)
         model.eval()
 
     image = pre_process_image(image_file_png, device)
