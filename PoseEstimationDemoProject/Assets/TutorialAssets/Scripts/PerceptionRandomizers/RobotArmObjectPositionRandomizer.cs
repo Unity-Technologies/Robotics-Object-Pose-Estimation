@@ -34,7 +34,7 @@ public class RobotArmObjectPositionRandomizer : Randomizer
     public GameObject robotBase;
     public float minRobotReachability;
     public float maxRobotReachability;
-    private FloatParameter random = new FloatParameter {value = new UniformSampler(0f, 1f)};
+    private FloatParameter random = new FloatParameter { value = new UniformSampler(0f, 1f) };
 
     private SurfaceObjectPlacer placer;
 

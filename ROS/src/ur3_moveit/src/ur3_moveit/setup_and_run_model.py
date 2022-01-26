@@ -130,12 +130,10 @@ def run_model_main(image_file_png, model_file_name):
         checkpoint = torch.load(model_file_name, map_location=device)
         model = PoseEstimationNetwork(is_symetric=False)
         model.load_state_dict(checkpoint["model"])
+        model.to(device)
         model.eval()
 
     image = pre_process_image(image_file_png, device)
-    output_translation, output_orientation = model(torch.stack(image).reshape(-1, 3, 224, 224))
-    output_translation, output_orientation = output_translation.detach().numpy(), output_orientation.detach().numpy()
+    output_translation, output_orientation = model(torch.stack(image).reshape(-1, 3, 224, 224).to(device))
+    output_translation, output_orientation = output_translation.cpu().detach().numpy(), output_orientation.cpu().detach().numpy()
     return output_orientation, output_translation
-
-# def run_model_main():
-#     print("hi")
